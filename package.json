@@ -2,11 +2,15 @@
   "name": "datx-prototype",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "reports:generate": "node scripts/generate-sample-reports.mjs"
   },
   "dependencies": {
     "next": "16.2.4",
