@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "reports:generate": "node scripts/generate-sample-reports.mjs"
+    "reports:generate": "node scripts/generate-sample-reports.mjs",
+    "brand:prepare": "node scripts/prepare-brand-assets.mjs"
   },
   "dependencies": {
     "next": "16.2.4",
