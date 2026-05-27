@@ -23,6 +23,13 @@ illustrative report files:
 npm run reports:generate
 ```
 
+The cleaned logo and branded app icon are committed as static assets. To
+regenerate them from an approved white DATX source image:
+
+```bash
+npm run brand:prepare -- /path/to/datx-logo-source.png
+```
+
 ## Vercel Deployment
 
 This repository uses standard Next.js conventions and requires no environment

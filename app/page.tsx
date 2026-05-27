@@ -9,6 +9,7 @@ import {
 } from "@/components/datx-content";
 import { ArrowIcon } from "@/components/icons";
 import { SiteHeader } from "@/components/site-header";
+import Image from "next/image";
 
 function HeroSection() {
   return (
@@ -38,10 +39,17 @@ function HeroSection() {
       <div className="container-frame relative flex min-h-[760px] items-center pb-20 pt-36 lg:min-h-screen">
         <div className="max-w-3xl lg:max-w-[52%]">
           <p className="eyebrow">Treasury Strategy Intelligence</p>
-          <h1 className="mt-7 text-6xl font-light tracking-[0.16em] text-white sm:text-7xl lg:text-8xl">
-            DATX
-          </h1>
-          <p className="mt-7 text-xl font-light tracking-wide text-slate-200 sm:text-2xl">
+          <h1 className="sr-only">DATX</h1>
+          <Image
+            alt=""
+            aria-hidden="true"
+            className="mt-8 h-auto w-[15.5rem] sm:w-[19.5rem] lg:w-[21rem]"
+            height={94}
+            priority
+            src="/brand/datx-logo-white.png"
+            width={343}
+          />
+          <p className="mt-9 text-xl font-light tracking-wide text-slate-200 sm:text-2xl">
             Digital Assets Treasury Platform
           </p>
           <p className="mt-8 max-w-2xl text-base leading-8 text-datx-mist sm:text-lg">
