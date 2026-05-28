@@ -73,13 +73,13 @@ const reports = [
     href: "/reports/datx-report-001-norwood-systems.pdf",
     focus: "Treasury suitability and strategic positioning assessment",
   },
-  {
-    number: "DATX Report #002",
-    company: "Ai-Media Technologies",
-    ticker: "ASX:AIM",
-    href: "/reports/datx-report-002-ai-media-technologies.pdf",
-    focus: "Capital flexibility and governance readiness analysis",
-  },
+];
+
+const reportSignals = [
+  "Treasury suitability scoring",
+  "Governance readiness analysis",
+  "Strategic allocation modeling",
+  "Balance sheet flexibility review",
 ];
 
 const exclusions = [
@@ -280,46 +280,77 @@ export function PhilosophySection() {
 }
 
 export function ReportsSection() {
+  const featuredReport = reports[0];
+
   return (
     <section className="section-space border-b border-datx-line" id="reports">
       <div className="container-frame">
         <SectionHeading
-          description="Illustrative reporting formats demonstrating how DATX structures treasury readiness analysis for listed-company contexts."
-          label="Sample Reports"
-          title="Premium Treasury Readiness Reports"
+          description="A restrained public preview of DATX treasury intelligence, designed to indicate analytical depth without exposing the full premium assessment framework."
+          label="Sample Report"
+          title="Featured Institutional Intelligence Preview"
         />
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          {reports.map((report) => (
-            <article className="surface group p-7 sm:p-9" key={report.number}>
-              <div className="flex items-start justify-between gap-5 border-b border-datx-line pb-8">
-                <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.2em] text-datx-accent">
-                    Premium Treasury Readiness Report
+        <article className="surface mt-12 overflow-hidden">
+          <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="border-b border-datx-line p-7 sm:p-9 lg:border-b-0 lg:border-r">
+              <div className="flex items-start justify-between gap-6">
+                <div className="max-w-xl">
+                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-datx-accent">
+                    Public Treasury Intelligence Preview
                   </p>
-                  <p className="mt-6 text-sm text-datx-mist">{report.number}</p>
-                  <h3 className="mt-3 text-2xl font-light text-white">
-                    {report.company}
+                  <p className="mt-7 text-sm text-datx-mist">
+                    {featuredReport.number}
+                  </p>
+                  <h3 className="mt-3 text-3xl font-light tracking-tight text-white sm:text-4xl">
+                    {featuredReport.company}
                   </h3>
-                  <p className="mt-2 text-sm font-medium tracking-wide text-datx-accent">
-                    {report.ticker}
+                  <p className="mt-3 text-sm font-medium tracking-[0.16em] text-datx-accent">
+                    {featuredReport.ticker}
                   </p>
                 </div>
                 <DocumentIcon className="h-10 w-10 shrink-0 text-datx-blue" />
               </div>
-              <p className="mt-7 text-sm leading-7 text-datx-mist">
-                {report.focus}
+              <p className="mt-8 max-w-2xl text-sm leading-7 text-datx-mist">
+                {featuredReport.focus}. This public report previews the DATX
+                approach to treasury suitability, governance posture, strategic
+                allocation design, and balance sheet flexibility while reserving
+                full diligence and implementation planning for formal
+                assessment engagements.
               </p>
               <a
-                className="button-secondary mt-8 w-full gap-2 sm:w-auto"
-                download
-                href={report.href}
+                className="button-secondary mt-9 w-full gap-2 sm:w-auto"
+                href={featuredReport.href}
               >
-                Download PDF
+                Open Public Preview
                 <ArrowIcon className="h-4 w-4" />
               </a>
-            </article>
-          ))}
-        </div>
+            </div>
+            <div className="bg-[#0a1522]/70 p-7 sm:p-9">
+              <p className="text-xs font-medium uppercase tracking-[0.22em] text-slate-400">
+                Intelligence Signals
+              </p>
+              <div className="mt-7 divide-y divide-datx-line border-y border-datx-line">
+                {reportSignals.map((signal, index) => (
+                  <div
+                    className="grid grid-cols-[3rem_1fr] items-center gap-4 py-4"
+                    key={signal}
+                  >
+                    <span className="text-xs tabular-nums tracking-widest text-datx-blue">
+                      0{index + 1}
+                    </span>
+                    <p className="text-sm leading-6 text-slate-200">{signal}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-7 text-sm leading-7 text-datx-mist">
+                The public preview is intentionally limited. Premium DATX
+                assessments extend into company-specific capital strategy,
+                governance sequencing, risk review, and execution partner
+                coordination where appropriate.
+              </p>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
   );
