@@ -65,21 +65,21 @@ const principles = [
   "Long-term strategic flexibility",
 ];
 
-const reports = [
-  {
-    number: "DATX Report #001",
-    company: "Norwood Systems Ltd",
-    ticker: "ASX:NOR",
-    href: "/reports/datx-report-001-norwood-systems.pdf",
-    focus: "Treasury suitability and strategic positioning assessment",
-  },
-  {
-    number: "DATX Report #002",
-    company: "Ai-Media Technologies",
-    ticker: "ASX:AIM",
-    href: "/reports/datx-report-002-ai-media-technologies.pdf",
-    focus: "Capital flexibility and governance readiness analysis",
-  },
+const featuredReport = {
+  number: "DATX Report #001",
+  company: "Norwood Systems Ltd",
+  ticker: "ASX:NOR",
+  href: "/reports/datx-report-001-norwood-systems.pdf",
+  classification: "Public Intelligence Preview",
+  focus: "Treasury suitability and strategic positioning assessment",
+};
+
+const reportSignals = [
+  "Treasury suitability scoring",
+  "Governance readiness analysis",
+  "Strategic digital asset allocation",
+  "Balance sheet flexibility review",
+  "Institutional treasury framework",
 ];
 
 const exclusions = [
@@ -284,42 +284,68 @@ export function ReportsSection() {
     <section className="section-space border-b border-datx-line" id="reports">
       <div className="container-frame">
         <SectionHeading
-          description="Illustrative reporting formats demonstrating how DATX structures treasury readiness analysis for listed-company contexts."
-          label="Sample Reports"
-          title="Premium Treasury Readiness Reports"
+          description="A public preview of the DATX treasury intelligence format, designed to show the analytical structure behind deeper company-specific assessment work."
+          label="Sample Report"
+          title="Featured DATX Treasury Intelligence Preview"
         />
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          {reports.map((report) => (
-            <article className="surface group p-7 sm:p-9" key={report.number}>
-              <div className="flex items-start justify-between gap-5 border-b border-datx-line pb-8">
-                <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.2em] text-datx-accent">
-                    Premium Treasury Readiness Report
+        <article className="surface mt-12 overflow-hidden">
+          <div className="grid lg:grid-cols-[1.02fr_0.98fr]">
+            <div className="border-b border-datx-line p-7 sm:p-9 lg:border-b-0 lg:border-r">
+              <div className="flex items-start justify-between gap-6">
+                <div className="max-w-xl">
+                  <p className="eyebrow">{featuredReport.classification}</p>
+                  <p className="mt-7 text-sm text-datx-mist">
+                    {featuredReport.number}
                   </p>
-                  <p className="mt-6 text-sm text-datx-mist">{report.number}</p>
-                  <h3 className="mt-3 text-2xl font-light text-white">
-                    {report.company}
+                  <h3 className="mt-3 text-3xl font-light tracking-tight text-white sm:text-4xl">
+                    {featuredReport.company}
                   </h3>
-                  <p className="mt-2 text-sm font-medium tracking-wide text-datx-accent">
-                    {report.ticker}
+                  <p className="mt-3 text-sm font-medium tracking-[0.16em] text-datx-accent">
+                    {featuredReport.ticker}
                   </p>
                 </div>
                 <DocumentIcon className="h-10 w-10 shrink-0 text-datx-blue" />
               </div>
-              <p className="mt-7 text-sm leading-7 text-datx-mist">
-                {report.focus}
+              <p className="mt-8 max-w-2xl text-sm leading-7 text-datx-mist">
+                {featuredReport.focus}. This public report provides a restrained
+                view into DATX methodology while reserving full diligence,
+                scenario design, governance review, and implementation planning
+                for formal treasury assessment engagements.
               </p>
               <a
-                className="button-secondary mt-8 w-full gap-2 sm:w-auto"
-                download
-                href={report.href}
+                className="button-secondary mt-9 w-full gap-2 sm:w-auto"
+                href={featuredReport.href}
               >
-                Download PDF
+                Open Public Preview
                 <ArrowIcon className="h-4 w-4" />
               </a>
-            </article>
-          ))}
-        </div>
+            </div>
+            <div className="bg-[#0a1522]/70 p-7 sm:p-9">
+              <p className="text-xs font-medium uppercase tracking-[0.22em] text-slate-400">
+                Preview Signals
+              </p>
+              <div className="mt-7 divide-y divide-datx-line border-y border-datx-line">
+                {reportSignals.map((signal, index) => (
+                  <div
+                    className="grid grid-cols-[3rem_1fr] items-center gap-4 py-4"
+                    key={signal}
+                  >
+                    <span className="text-xs tabular-nums tracking-widest text-datx-blue">
+                      0{index + 1}
+                    </span>
+                    <p className="text-sm leading-6 text-slate-200">{signal}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-7 text-sm leading-7 text-datx-mist">
+                The public preview is intentionally limited. DATX premium
+                assessments expand the framework into company-specific capital
+                strategy, governance sequencing, risk review, and execution
+                partner coordination where appropriate.
+              </p>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
   );
