@@ -8,6 +8,7 @@ import {
   WorkflowSection,
 } from "@/components/datx-content";
 import { ArrowIcon } from "@/components/icons";
+import { SampleAssessmentModal } from "@/components/sample-assessment-modal";
 import { SiteHeader } from "@/components/site-header";
 import Image from "next/image";
 
@@ -59,8 +60,9 @@ function HeroSection() {
             vetted execution partners.
           </p>
           <div className="mt-11 flex flex-col gap-4 sm:flex-row">
-            <a className="button-primary gap-2" href="#reports">
-              View Sample Report
+            <SampleAssessmentModal />
+            <a className="button-secondary gap-2" href="#reports">
+              Preview Details
               <ArrowIcon className="h-4 w-4" />
             </a>
             <a className="button-secondary" href="#assessment">

@@ -1,4 +1,5 @@
-import { ArrowIcon, DocumentIcon } from "@/components/icons";
+import { DocumentIcon } from "@/components/icons";
+import { SampleAssessmentModal } from "@/components/sample-assessment-modal";
 import { SectionHeading } from "@/components/section-heading";
 
 const capabilities = [
@@ -70,7 +71,6 @@ const reports = [
     number: "DATX Report #001",
     company: "Norwood Systems Ltd",
     ticker: "ASX:NOR",
-    href: "/reports/datx-report-001-norwood-systems.pdf",
     focus: "Treasury suitability and strategic positioning assessment",
   },
 ];
@@ -317,13 +317,10 @@ export function ReportsSection() {
                 full diligence and implementation planning for formal
                 assessment engagements.
               </p>
-              <a
+              <SampleAssessmentModal
                 className="button-secondary mt-9 w-full gap-2 sm:w-auto"
-                href={featuredReport.href}
-              >
-                Open Public Preview
-                <ArrowIcon className="h-4 w-4" />
-              </a>
+                label="View Sample Assessment"
+              />
             </div>
             <div className="bg-[#0a1522]/70 p-7 sm:p-9">
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-slate-400">
