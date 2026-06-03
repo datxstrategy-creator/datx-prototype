@@ -36,6 +36,25 @@ const experienceHighlights = [
   "Tokyo, Japan",
 ];
 
+const datxProvides = [
+  "Treasury strategy analysis",
+  "Treasury readiness assessments",
+  "Governance readiness reviews",
+  "Capital allocation research",
+  "Strategic risk evaluation",
+  "Investor positioning analysis",
+  "Institutional-grade treasury research",
+];
+
+const datxDoesNotProvide = [
+  "Brokerage services",
+  "Custody services",
+  "Legal advice",
+  "Accounting advice",
+  "Asset management",
+  "Trading execution",
+];
+
 function PageShell({ children }: { children: React.ReactNode }) {
   return <div className="mx-auto w-full max-w-5xl px-6 lg:px-10">{children}</div>;
 }
@@ -279,6 +298,57 @@ function ContactSection() {
   );
 }
 
+function RoleScopeSection() {
+  return (
+    <SectionCard id="role-operating-scope">
+      <CardHeading
+        label="DATX Role & Operating Scope"
+        title="DATX Role & Operating Scope"
+      />
+      <div className="mt-8 space-y-5">
+        <p className="body-copy">
+          DATX is an independent treasury intelligence platform focused on
+          helping public companies evaluate whether digital asset treasury
+          strategies are appropriate, defensible, and executable before risking
+          capital, reputation, or shareholder trust.
+        </p>
+        <p className="body-copy">
+          DATX provides research, assessment, governance analysis, and strategic
+          treasury intelligence. DATX does not provide brokerage, custody,
+          legal, accounting, or investment management services.
+        </p>
+      </div>
+
+      <div className="mt-10 grid gap-5 lg:grid-cols-2">
+        <div>
+          <h3 className="text-sm font-medium uppercase tracking-[0.18em] text-datx-accent">
+            DATX Provides
+          </h3>
+          <ListedItems items={datxProvides} />
+        </div>
+        <div>
+          <h3 className="text-sm font-medium uppercase tracking-[0.18em] text-slate-400">
+            DATX Does Not Provide
+          </h3>
+          <ListedItems items={datxDoesNotProvide} />
+        </div>
+      </div>
+
+      <div className="mt-10 border-l border-datx-blue pl-6">
+        <h3 className="text-sm font-medium uppercase tracking-[0.18em] text-white">
+          Implementation Support
+        </h3>
+        <p className="body-copy mt-5">
+          Where implementation support is required, DATX may facilitate
+          introductions to vetted execution, custody, legal, accounting, and
+          strategic advisory partners. Final implementation decisions remain the
+          responsibility of the client.
+        </p>
+      </div>
+    </SectionCard>
+  );
+}
+
 function SiteFooter() {
   return (
     <footer className="border-t border-datx-line">
@@ -313,6 +383,7 @@ export default function AboutPage() {
             <FounderSection />
             <MissionSection />
             <ContactSection />
+            <RoleScopeSection />
           </PageShell>
         </div>
       </main>

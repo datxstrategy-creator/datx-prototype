@@ -1,7 +1,6 @@
 import {
   CapabilitySection,
   PhilosophySection,
-  PositioningSection,
   ReportsSection,
   ScoringSection,
   VisionSection,
@@ -147,7 +146,6 @@ export default function Home() {
         <ScoringSection />
         <PhilosophySection />
         <ReportsSection />
-        <PositioningSection />
         <WorkflowSection />
         <AssessmentSection />
       </main>
