@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { MobileNavigation } from "@/components/mobile-navigation";
 
 const links = [
   { label: "Framework", href: "/#framework" },
@@ -43,6 +44,7 @@ export function SiteHeader() {
         >
           Request Assessment
         </Link>
+        <MobileNavigation />
       </div>
     </header>
   );
