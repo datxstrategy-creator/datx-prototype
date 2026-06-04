@@ -277,11 +277,9 @@ function ContactSection() {
   return (
     <SectionCard id="contact">
       <div className="mx-auto max-w-2xl text-center">
-        <p className="eyebrow">Contact</p>
         <h2 className="mt-4 text-3xl font-light tracking-tight text-white sm:text-4xl">
-          DATX Strategy
+          Contact DATX
         </h2>
-        <p className="mt-5 text-sm leading-7 text-datx-mist">Tokyo, Japan</p>
         <div className="mt-8 border border-datx-line bg-datx-navy/70 p-4 sm:flex sm:items-center sm:justify-between sm:gap-4">
           <a
             className="block break-all text-left text-sm leading-6 text-datx-accent transition-colors hover:text-white"
@@ -382,8 +380,8 @@ export default function AboutPage() {
             <AboutDatxSection />
             <FounderSection />
             <MissionSection />
-            <ContactSection />
             <RoleScopeSection />
+            <ContactSection />
           </PageShell>
         </div>
       </main>
