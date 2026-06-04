@@ -119,7 +119,10 @@ function SiteFooter() {
             DATX
           </p>
           <p className="mt-4 text-sm text-datx-mist">
-            Built for public company analysis
+            © 2026 DATX. All rights reserved.
+          </p>
+          <p className="mt-4 text-sm text-datx-mist">
+            Built for public company treasury analysis.
           </p>
         </div>
         <p className="max-w-2xl text-sm leading-7 text-slate-400 lg:text-right">
