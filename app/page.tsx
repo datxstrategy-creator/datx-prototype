@@ -15,25 +15,22 @@ function HeroSection() {
   return (
     <section className="relative overflow-hidden border-b border-datx-line bg-datx-black">
       <div className="absolute inset-0 bg-[linear-gradient(105deg,#060a10_15%,#09131f_58%,#0b1624_100%)]" />
-      <div className="absolute inset-y-0 right-0 hidden w-[46%] border-l border-datx-line/60 lg:block">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0,rgba(83,125,168,0.03)_1px,transparent_1px),linear-gradient(to_bottom,transparent_0,rgba(83,125,168,0.05)_1px,transparent_1px)] bg-[size:80px_80px]" />
-        <div className="absolute bottom-24 left-12 right-12 border border-datx-line bg-datx-panel/55 p-8">
-          <p className="eyebrow">Institutional Framework</p>
-          <div className="mt-10 space-y-6">
-            {[
-              "Treasury suitability",
-              "Governance readiness",
-              "Capital strategy analysis",
-            ].map((item, index) => (
-              <div className="flex items-center gap-5" key={item}>
-                <span className="text-xs tabular-nums text-datx-blue">
-                  0{index + 1}
-                </span>
-                <div className="h-px flex-1 bg-datx-line" />
-                <p className="w-44 text-sm text-datx-mist">{item}</p>
-              </div>
-            ))}
-          </div>
+      <div className="absolute bottom-24 right-12 hidden w-[calc(46%-6rem)] border border-datx-line bg-datx-panel/55 p-8 lg:block">
+        <p className="eyebrow">Institutional Framework</p>
+        <div className="mt-10 space-y-6">
+          {[
+            "Treasury suitability",
+            "Governance readiness",
+            "Capital strategy analysis",
+          ].map((item, index) => (
+            <div className="flex items-center gap-5" key={item}>
+              <span className="text-xs tabular-nums text-datx-blue">
+                0{index + 1}
+              </span>
+              <div className="h-px flex-1 bg-datx-line" />
+              <p className="w-44 text-sm text-datx-mist">{item}</p>
+            </div>
+          ))}
         </div>
       </div>
       <div className="container-frame relative flex min-h-[760px] items-center pb-20 pt-36 lg:min-h-screen">
