@@ -8,24 +8,14 @@ import {
 } from "@/components/datx-content";
 import { SampleAssessmentModal } from "@/components/sample-assessment-modal";
 import { SiteHeader } from "@/components/site-header";
-import Image from "next/image";
 
 function HeroSection() {
   return (
     <section className="relative overflow-hidden border-b border-datx-line bg-datx-black">
       <div className="absolute inset-0 bg-[linear-gradient(105deg,#060a10_15%,#09131f_58%,#0b1624_100%)]" />
-      <div className="container-frame relative flex min-h-[620px] items-center pb-16 pt-32 sm:min-h-[660px] lg:min-h-[720px]">
+      <div className="container-frame relative flex min-h-[520px] items-center pb-14 pt-28 sm:min-h-[560px] lg:min-h-[620px]">
         <div className="w-full max-w-5xl">
-          <Image
-            alt=""
-            aria-hidden="true"
-            className="h-auto w-[15.5rem] sm:w-[19.5rem] lg:w-[21rem]"
-            height={94}
-            priority
-            src="/brand/datx-logo-white.png"
-            width={343}
-          />
-          <h1 className="mt-9 max-w-4xl text-4xl font-light tracking-tight text-white sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-4xl text-4xl font-light tracking-tight text-white sm:text-6xl lg:text-7xl">
             Digital asset treasury assessments for public companies
           </h1>
           <p className="mt-8 max-w-3xl text-base leading-8 text-slate-200 sm:text-lg">
