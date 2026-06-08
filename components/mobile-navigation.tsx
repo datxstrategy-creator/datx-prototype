@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { SampleAssessmentModal } from "@/components/sample-assessment-modal";
 
 const mobileLinks = [
+  { label: "Network", href: "/#network" },
   { label: "About", href: "/about" },
   { label: "Request Assessment", href: "/#assessment" },
   { label: "Contact", href: "/about#contact" },

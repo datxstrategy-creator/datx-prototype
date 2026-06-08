@@ -3,6 +3,7 @@ import {
   PhilosophySection,
   ReportsSection,
   ScoringSection,
+  StrategicNetworkSection,
   VisionSection,
   WorkflowSection,
 } from "@/components/datx-content";
@@ -110,6 +111,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <CapabilitySection />
+        <StrategicNetworkSection />
         <VisionSection />
         <ScoringSection />
         <PhilosophySection />

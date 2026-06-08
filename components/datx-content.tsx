@@ -171,6 +171,41 @@ export function CapabilitySection() {
     </section>
   );
 }
+
+export function StrategicNetworkSection() {
+  return (
+    <section className="border-b border-datx-line py-14 sm:py-16" id="network">
+      <div className="container-frame">
+        <div className="surface border-datx-blue/35 px-7 py-8 sm:px-10 lg:grid lg:grid-cols-[0.7fr_1.3fr] lg:gap-12 lg:px-12">
+          <div>
+            <h2 className="text-3xl font-light tracking-tight text-white sm:text-4xl">
+              Strategic Network
+            </h2>
+          </div>
+          <div className="mt-7 space-y-5 text-sm leading-7 text-datx-mist lg:mt-0">
+            <p>
+              DATX assessments are supported by a network of experienced
+              treasury, governance, and digital asset professionals.
+            </p>
+            <p>
+              For premium treasury readiness engagements, assessments may
+              incorporate additional review and strategic input from experienced
+              industry specialists, providing broader perspective across
+              treasury strategy, governance considerations, capital allocation,
+              and implementation pathways.
+            </p>
+            <p>
+              Where implementation support is required, DATX may coordinate
+              introductions to vetted custody, legal, accounting, and execution
+              partners.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function VisionSection() {
   return (
     <section className="section-space border-b border-datx-line" id="vision">
