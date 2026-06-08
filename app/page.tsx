@@ -14,45 +14,26 @@ function HeroSection() {
   return (
     <section className="relative overflow-hidden border-b border-datx-line bg-datx-black">
       <div className="absolute inset-0 bg-[linear-gradient(105deg,#060a10_15%,#09131f_58%,#0b1624_100%)]" />
-      <div className="absolute bottom-24 right-12 hidden w-[calc(46%-6rem)] border border-datx-line bg-datx-panel/55 p-8 lg:block">
-        <p className="eyebrow">Institutional Framework</p>
-        <div className="mt-10 space-y-6">
-          {[
-            "Treasury suitability",
-            "Governance readiness",
-            "Capital strategy analysis",
-          ].map((item, index) => (
-            <div className="flex items-center gap-5" key={item}>
-              <span className="text-xs tabular-nums text-datx-blue">
-                0{index + 1}
-              </span>
-              <div className="h-px flex-1 bg-datx-line" />
-              <p className="w-44 text-sm text-datx-mist">{item}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="container-frame relative flex min-h-[760px] items-center pb-20 pt-36 lg:min-h-screen">
-        <div className="max-w-3xl lg:max-w-[52%]">
-          <p className="eyebrow">DATX</p>
+      <div className="container-frame relative flex min-h-[620px] items-center pb-16 pt-32 sm:min-h-[660px] lg:min-h-[720px]">
+        <div className="w-full max-w-5xl">
           <Image
             alt=""
             aria-hidden="true"
-            className="mt-8 h-auto w-[15.5rem] sm:w-[19.5rem] lg:w-[21rem]"
+            className="h-auto w-[15.5rem] sm:w-[19.5rem] lg:w-[21rem]"
             height={94}
             priority
             src="/brand/datx-logo-white.png"
             width={343}
           />
-          <h1 className="mt-9 text-4xl font-light tracking-tight text-white sm:text-6xl">
+          <h1 className="mt-9 max-w-4xl text-4xl font-light tracking-tight text-white sm:text-6xl lg:text-7xl">
             Digital asset treasury assessments for public companies
           </h1>
-          <p className="mt-8 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg">
+          <p className="mt-8 max-w-3xl text-base leading-8 text-slate-200 sm:text-lg">
             DATX helps boards and management teams evaluate whether a digital
             asset treasury strategy is suitable, defensible, and executable
             before capital is put at risk.
           </p>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-datx-mist sm:text-lg">
+          <p className="mt-5 max-w-3xl text-base leading-8 text-datx-mist sm:text-lg">
             We assess treasury readiness, governance risk, allocation scenarios,
             and investor positioning.
           </p>
