@@ -5,10 +5,12 @@ import { useEffect, useState } from "react";
 import { SampleAssessmentModal } from "@/components/sample-assessment-modal";
 
 const mobileLinks = [
+  { label: "Framework", href: "/#framework" },
+  { label: "Reports", href: "/#reports" },
   { label: "Network", href: "/#network" },
+  { label: "Workflow", href: "/#workflow" },
   { label: "About", href: "/about" },
   { label: "Request Assessment", href: "/#assessment" },
-  { label: "Contact", href: "/about#contact" },
 ];
 
 export function MobileNavigation() {
@@ -30,9 +32,11 @@ export function MobileNavigation() {
     };
 
     document.addEventListener("keydown", onKeyDown);
+    document.body.style.overflow = "hidden";
 
     return () => {
       document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
@@ -42,7 +46,7 @@ export function MobileNavigation() {
         aria-controls="mobile-navigation"
         aria-expanded={isOpen}
         aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-        className="flex h-11 w-11 items-center justify-center border border-datx-line bg-datx-panel/70 text-slate-100 transition-colors hover:border-datx-blue hover:bg-[#101e2e] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-datx-accent"
+        className="relative z-20 flex h-11 w-11 items-center justify-center border border-datx-line bg-datx-panel/90 text-slate-100 transition-colors hover:border-datx-blue hover:bg-[#101e2e] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-datx-accent"
         onClick={() => setIsOpen((current) => !current)}
         type="button"
       >
@@ -67,24 +71,36 @@ export function MobileNavigation() {
 
       {isOpen ? (
         <div
-          className="absolute inset-x-0 top-20 border-y border-datx-line bg-datx-black/95 shadow-panel backdrop-blur-md"
+          className="fixed inset-0 z-10 overflow-y-auto bg-datx-black shadow-panel"
           id="mobile-navigation"
         >
-          <nav aria-label="Mobile primary" className="container-frame py-5">
-            <div className="grid gap-2">
-              {mobileLinks.map((link) => (
-                <Link
-                  className="border border-datx-line bg-datx-panel/45 px-4 py-3 text-sm font-medium text-slate-100 transition-colors hover:border-datx-blue hover:bg-[#101e2e]"
-                  href={link.href}
-                  key={link.href}
-                  onClick={closeAfterNavigation}
-                >
-                  {link.label}
-                </Link>
-              ))}
+          <nav
+            aria-label="Mobile primary"
+            className="container-frame flex min-h-full flex-col justify-between pb-8 pt-28"
+          >
+            <div>
+              <p className="eyebrow">Navigation</p>
+              <div className="mt-6 divide-y divide-datx-line border-y border-datx-line">
+                {mobileLinks.map((link) => (
+                  <Link
+                    className="flex items-center justify-between py-4 text-base font-light text-slate-100 transition-colors hover:text-white"
+                    href={link.href}
+                    key={link.href}
+                    onClick={closeAfterNavigation}
+                  >
+                    <span>{link.label}</span>
+                    <span
+                      className="h-px w-7 bg-datx-blue"
+                      aria-hidden="true"
+                    />
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className="mt-8 border-t border-datx-line pt-6">
               <SampleAssessmentModal
-                className="button-secondary mt-2 w-full px-4 py-3"
-                label="Sample Assessment"
+                className="button-secondary w-full justify-center px-4 py-3"
+                label="View Sample Assessment"
               />
             </div>
           </nav>
