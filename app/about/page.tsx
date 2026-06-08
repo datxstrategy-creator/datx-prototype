@@ -8,14 +8,6 @@ export const metadata: Metadata = {
     "About DATX, founder Christopher Nakayama, DATX mission, and contact details.",
 };
 
-const focusAreas = [
-  "Treasury risk management",
-  "Capital allocation discipline",
-  "Governance readiness",
-  "Strategic alignment",
-  "Long-term shareholder value creation",
-];
-
 const founderEmphasis = [
   "Digital asset valuation",
   "Treasury strategy",
@@ -37,13 +29,11 @@ const experienceHighlights = [
 ];
 
 const datxProvides = [
-  "Treasury strategy analysis",
-  "Treasury readiness assessments",
-  "Governance readiness reviews",
-  "Capital allocation research",
-  "Strategic risk evaluation",
+  "Treasury readiness assessment",
+  "Governance and risk review",
+  "Allocation strategy analysis",
   "Investor positioning analysis",
-  "Institutional-grade treasury research",
+  "Implementation partner coordination",
 ];
 
 const datxDoesNotProvide = [
@@ -121,7 +111,8 @@ function AboutHero() {
               About DATX
             </h1>
             <p className="mt-6 max-w-2xl text-xl font-light leading-9 text-slate-200 sm:text-2xl">
-              A Structured Approach to Digital Asset Treasury Strategy
+              Independent treasury assessments for public companies considering
+              digital asset treasury strategies.
             </p>
           </div>
         </div>
@@ -133,41 +124,34 @@ function AboutHero() {
 function AboutDatxSection() {
   return (
     <SectionCard id="about-datx">
-      <CardHeading
-        label="About DATX"
-        title="A Structured Approach to Digital Asset Treasury Strategy"
-      />
+      <h2 className="text-3xl font-light tracking-tight text-white sm:text-4xl">
+        About DATX
+      </h2>
       <div className="mt-8 space-y-5">
         <p className="body-copy">
-          DATX (Digital Asset Treasury Analysis) was created to help public
-          companies evaluate whether a digital asset treasury strategy aligns
-          with their financial position, governance framework, and long-term
-          objectives.
+          DATX is an independent treasury intelligence platform for public
+          companies considering digital asset treasury strategies.
         </p>
         <p className="body-copy">
-          As digital assets become increasingly integrated into corporate
-          finance, boards and management teams face a growing challenge:
+          We help boards and management teams answer a critical question:
         </p>
         <p className="border-l border-datx-blue bg-datx-navy/60 px-6 py-5 text-lg font-light leading-8 text-white">
-          How can treasury innovation be evaluated objectively, responsibly, and
-          strategically?
+          Is a digital asset treasury strategy suitable for this company?
         </p>
         <p className="body-copy">
-          DATX was developed to provide a structured framework for assessing
-          treasury readiness, identifying implementation risks, and exploring
-          potential digital asset allocation strategies through a
-          governance-first lens.
+          Each DATX assessment reviews the company&apos;s balance sheet,
+          liquidity position, governance readiness, strategic rationale,
+          allocation options, and investor positioning. The goal is to help
+          leadership teams make a disciplined decision before committing
+          capital, reputation, or shareholder trust.
         </p>
         <p className="body-copy">
-          Rather than promoting speculation, DATX focuses on:
+          DATX does not provide brokerage, custody, legal, accounting, or
+          investment management services. Where implementation support is
+          required, DATX may introduce vetted execution, custody, legal,
+          accounting, and advisory partners.
         </p>
       </div>
-      <ListedItems items={focusAreas} />
-      <p className="body-copy mt-8">
-        Each assessment is designed to provide management teams and investors
-        with a clear, repeatable evaluation process supported by publicly
-        available information and transparent methodology.
-      </p>
     </SectionCard>
   );
 }
@@ -320,7 +304,7 @@ function RoleScopeSection() {
       <div className="mt-10 grid gap-5 lg:grid-cols-2">
         <div>
           <h3 className="text-sm font-medium uppercase tracking-[0.18em] text-datx-accent">
-            DATX Provides
+            What DATX Provides
           </h3>
           <ListedItems items={datxProvides} />
         </div>

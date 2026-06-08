@@ -6,7 +6,6 @@ import {
   VisionSection,
   WorkflowSection,
 } from "@/components/datx-content";
-import { ArrowIcon } from "@/components/icons";
 import { SampleAssessmentModal } from "@/components/sample-assessment-modal";
 import { SiteHeader } from "@/components/site-header";
 import Image from "next/image";
@@ -35,8 +34,7 @@ function HeroSection() {
       </div>
       <div className="container-frame relative flex min-h-[760px] items-center pb-20 pt-36 lg:min-h-screen">
         <div className="max-w-3xl lg:max-w-[52%]">
-          <p className="eyebrow">Treasury Strategy Intelligence</p>
-          <h1 className="sr-only">DATX</h1>
+          <p className="eyebrow">DATX</p>
           <Image
             alt=""
             aria-hidden="true"
@@ -46,24 +44,23 @@ function HeroSection() {
             src="/brand/datx-logo-white.png"
             width={343}
           />
-          <p className="mt-9 text-xl font-light tracking-wide text-slate-200 sm:text-2xl">
-            Digital Assets Treasury Platform
+          <h1 className="mt-9 text-4xl font-light tracking-tight text-white sm:text-6xl">
+            Digital asset treasury assessments for public companies
+          </h1>
+          <p className="mt-8 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg">
+            DATX helps boards and management teams evaluate whether a digital
+            asset treasury strategy is suitable, defensible, and executable
+            before capital is put at risk.
           </p>
-          <p className="mt-8 max-w-2xl text-base leading-8 text-datx-mist sm:text-lg">
-            DATX is a digital asset treasury strategy platform focused on
-            helping public companies evaluate, design, and implement
-            institutional-grade digital asset treasury frameworks through
-            vetted execution partners.
+          <p className="mt-5 max-w-2xl text-base leading-8 text-datx-mist sm:text-lg">
+            We assess treasury readiness, governance risk, allocation scenarios,
+            and investor positioning.
           </p>
           <div className="mt-11 flex flex-col gap-4 sm:flex-row">
-            <SampleAssessmentModal />
-            <a className="button-secondary gap-2" href="#reports">
-              Preview Details
-              <ArrowIcon className="h-4 w-4" />
+            <a className="button-primary" href="#assessment">
+              Request Treasury Assessment
             </a>
-            <a className="button-secondary" href="#assessment">
-              Request Assessment
-            </a>
+            <SampleAssessmentModal className="button-secondary gap-2" />
           </div>
         </div>
       </div>
