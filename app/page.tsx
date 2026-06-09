@@ -101,12 +101,13 @@ function SiteFooter() {
             legal, tax, or financial advice.
           </p>
           <a
-            className="inline-flex items-center gap-2 border-b border-datx-blue/40 pb-1 text-sm font-medium text-datx-accent transition-colors duration-200 hover:border-datx-accent hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-datx-accent"
+            aria-label="DATX on X"
+            className="inline-flex h-10 w-10 items-center justify-center text-3xl leading-none text-slate-300 transition-colors duration-200 hover:text-datx-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-datx-accent"
             href="https://x.com/DATX_strategy"
             rel="noopener noreferrer"
             target="_blank"
           >
-            𝕏 Follow DATX on X
+            𝕏
           </a>
         </div>
       </div>
