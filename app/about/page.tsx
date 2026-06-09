@@ -5,28 +5,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About DATX",
   description:
-    "About DATX, founder Christopher Nakayama, DATX mission, and contact details.",
+    "About DATX, an independent treasury intelligence platform for public company digital asset treasury strategy evaluation.",
 };
-
-const founderEmphasis = [
-  "Digital asset valuation",
-  "Treasury strategy",
-  "Token economics",
-  "Blockchain infrastructure",
-  "Public market adoption of digital assets",
-];
-
-const founderStats = [
-  { value: "2017", label: "Entered Digital Assets" },
-  { value: "9+", label: "Years Market Experience" },
-  { value: "2", label: "Independent Research Platforms" },
-];
-
-const experienceHighlights = [
-  "Since 2017 in Digital Assets",
-  "Founder of JPMI",
-  "Tokyo, Japan",
-];
 
 const datxProvides = [
   "Treasury readiness assessment",
@@ -43,6 +23,14 @@ const datxDoesNotProvide = [
   "Accounting advice",
   "Asset management",
   "Trading execution",
+];
+
+const datxCapabilities = [
+  "Treasury readiness assessment",
+  "Governance review",
+  "Allocation strategy analysis",
+  "Risk and investor positioning analysis",
+  "Strategic treasury intelligence",
 ];
 
 function PageShell({ children }: { children: React.ReactNode }) {
@@ -104,14 +92,14 @@ function AboutHero() {
       <div className="absolute inset-0 bg-[linear-gradient(105deg,#060a10_15%,#09131f_62%,#0b1624_100%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0,rgba(83,125,168,0.025)_1px,transparent_1px),linear-gradient(to_bottom,transparent_0,rgba(83,125,168,0.04)_1px,transparent_1px)] bg-[size:88px_88px]" />
       <PageShell>
-        <div className="relative flex min-h-[420px] items-end pb-14 pt-32 sm:min-h-[470px] sm:pb-16">
+        <div className="relative flex min-h-[390px] items-end pb-14 pt-32 sm:min-h-[440px] sm:pb-16">
           <div className="max-w-3xl">
             <p className="eyebrow">About DATX</p>
             <h1 className="mt-6 text-4xl font-light tracking-tight text-white sm:text-6xl">
               About DATX
             </h1>
             <p className="mt-6 max-w-2xl text-xl font-light leading-9 text-slate-200 sm:text-2xl">
-              Independent treasury assessments for public companies considering
+              Independent treasury intelligence for public companies evaluating
               digital asset treasury strategies.
             </p>
           </div>
@@ -127,111 +115,54 @@ function AboutDatxSection() {
       <h2 className="text-3xl font-light tracking-tight text-white sm:text-4xl">
         About DATX
       </h2>
-      <div className="mt-8 space-y-5">
-        <p className="body-copy">
-          DATX is an independent treasury intelligence platform for public
-          companies considering digital asset treasury strategies.
-        </p>
-        <p className="body-copy">
-          We help boards and management teams answer a critical question:
-        </p>
-        <p className="border-l border-datx-blue bg-datx-navy/60 px-6 py-5 text-lg font-light leading-8 text-white">
-          Is a digital asset treasury strategy suitable for this company?
-        </p>
-        <p className="body-copy">
-          Each DATX assessment reviews the company&apos;s balance sheet,
-          liquidity position, governance readiness, strategic rationale,
-          allocation options, and investor positioning. The goal is to help
-          leadership teams make a disciplined decision before committing
-          capital, reputation, or shareholder trust.
-        </p>
-        <p className="body-copy">
-          DATX does not provide brokerage, custody, legal, accounting, or
-          investment management services. Where implementation support is
-          required, DATX may introduce vetted execution, custody, legal,
-          accounting, and advisory partners.
-        </p>
+      <div className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+        <div className="space-y-5">
+          <p className="body-copy">
+            DATX is an independent treasury intelligence platform that helps
+            public companies evaluate digital asset treasury strategies with
+            institutional discipline.
+          </p>
+          <p className="body-copy">
+            DATX supports boards and management teams as they assess whether a
+            digital asset allocation is suitable, defensible, and executable
+            before capital, reputation, or shareholder trust is placed at risk.
+          </p>
+          <p className="body-copy">
+            The platform focuses on treasury readiness, governance requirements,
+            allocation strategy, risk profile, and investor positioning so
+            leadership teams can make a structured capital allocation decision.
+          </p>
+        </div>
+        <div className="border-l border-datx-blue bg-datx-navy/60 px-6 py-5">
+          <p className="text-sm uppercase tracking-[0.18em] text-datx-accent">
+            Core Evaluation Question
+          </p>
+          <p className="mt-4 text-lg font-light leading-8 text-white">
+            Is a digital asset treasury strategy suitable for this company?
+          </p>
+        </div>
       </div>
     </SectionCard>
   );
 }
 
-function FounderSection() {
+function WhatDatxDoesSection() {
   return (
-    <SectionCard id="founder">
-      <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-5">
-          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-datx-blue/60 bg-datx-navy text-lg font-medium tracking-[0.18em] text-white">
-            CN
-          </div>
-          <div>
-            <p className="eyebrow">Founder</p>
-            <h2 className="mt-3 text-3xl font-light tracking-tight text-white sm:text-4xl">
-              Christopher Nakayama
-            </h2>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-8 grid gap-3 sm:grid-cols-3">
-        {founderStats.map((stat) => (
-          <div
-            className="border border-datx-line bg-datx-navy/70 px-5 py-5"
-            key={stat.label}
-          >
-            <p className="text-3xl font-light tabular-nums text-white">
-              {stat.value}
-            </p>
-            <p className="mt-2 text-xs uppercase leading-5 tracking-[0.16em] text-datx-accent">
-              {stat.label}
-            </p>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-6 grid gap-3 sm:grid-cols-3">
-        {experienceHighlights.map((highlight) => (
-          <div
-            className="border border-datx-line/80 bg-[#0a1522]/70 px-4 py-3 text-sm text-slate-200"
-            key={highlight}
-          >
-            {highlight}
-          </div>
-        ))}
-      </div>
-
+    <SectionCard id="what-datx-does">
+      <CardHeading label="What DATX Does" title="What DATX Does" />
       <div className="mt-8 space-y-5">
         <p className="body-copy">
-          Christopher Nakayama is a Tokyo-based digital asset analyst,
-          researcher, and entrepreneur with nearly a decade of experience
-          studying cryptocurrency markets, blockchain networks, and emerging
-          digital asset ecosystems.
+          DATX produces company-specific treasury intelligence for public
+          issuers considering whether, how, and under what constraints a digital
+          asset treasury strategy could be evaluated.
         </p>
         <p className="body-copy">
-          Since entering the digital asset industry in 2017, Christopher has
-          focused on identifying long-term technological and economic trends
-          across the sector, with particular emphasis on:
+          Assessments are designed to clarify strategic rationale, governance
+          readiness, capital allocation parameters, downside risk, and investor
+          communication requirements before implementation decisions are made.
         </p>
       </div>
-      <ListedItems items={founderEmphasis} />
-      <div className="mt-8 space-y-5">
-        <p className="body-copy">
-          His research spans multiple market cycles and includes early analysis
-          of emerging digital asset networks before broader institutional
-          recognition.
-        </p>
-        <p className="body-copy">
-          Christopher is also the founder of Japan Physical Metals Index (JPMI),
-          an independent market research initiative that tracks physical
-          precious metals pricing and market inefficiencies within Japan.
-        </p>
-        <p className="body-copy">
-          Through DATX, Christopher aims to bridge the gap between traditional
-          corporate finance and the rapidly evolving digital asset economy by
-          providing companies with practical, disciplined, and governance-focused
-          treasury analysis.
-        </p>
-      </div>
+      <ListedItems items={datxCapabilities} />
     </SectionCard>
   );
 }
@@ -250,7 +181,7 @@ function MissionSection() {
         </p>
         <p className="body-copy mx-auto mt-7 max-w-2xl">
           We believe treasury innovation should be driven by data, governance,
-          and long-term strategic thinking—not hype.
+          and long-term strategic thinking.
         </p>
       </div>
     </SectionCard>
@@ -285,9 +216,9 @@ function RoleScopeSection() {
     <SectionCard id="role-operating-scope">
       <CardHeading
         label="DATX Role & Operating Scope"
-        title="DATX Role & Operating Scope"
+        title="Independent analysis with clearly defined boundaries"
       />
-      <div className="mt-8 space-y-5">
+      <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_1fr]">
         <p className="body-copy">
           DATX is an independent treasury intelligence platform focused on
           helping public companies evaluate whether digital asset treasury
@@ -302,13 +233,13 @@ function RoleScopeSection() {
       </div>
 
       <div className="mt-10 grid gap-5 lg:grid-cols-2">
-        <div>
+        <div className="border border-datx-line bg-datx-navy/40 p-6">
           <h3 className="text-sm font-medium uppercase tracking-[0.18em] text-datx-accent">
             What DATX Provides
           </h3>
           <ListedItems items={datxProvides} />
         </div>
-        <div>
+        <div className="border border-datx-line bg-datx-navy/40 p-6">
           <h3 className="text-sm font-medium uppercase tracking-[0.18em] text-slate-400">
             DATX Does Not Provide
           </h3>
@@ -365,7 +296,7 @@ export default function AboutPage() {
         <div className="border-b border-datx-line py-5 sm:py-7">
           <PageShell>
             <AboutDatxSection />
-            <FounderSection />
+            <WhatDatxDoesSection />
             <MissionSection />
             <RoleScopeSection />
             <ContactSection />
