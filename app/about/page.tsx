@@ -277,11 +277,21 @@ function SiteFooter() {
             Built for public company treasury analysis.
           </p>
         </div>
-        <p className="max-w-2xl text-sm leading-7 text-slate-400 lg:text-right">
-          DATX provides treasury strategy analysis and institutional-style
-          research only. Nothing on this website constitutes investment, legal,
-          tax, or financial advice.
-        </p>
+        <div className="flex max-w-2xl flex-col items-start gap-5 lg:items-end lg:text-right">
+          <p className="text-sm leading-7 text-slate-400">
+            DATX provides treasury strategy analysis and institutional-style
+            research only. Nothing on this website constitutes investment,
+            legal, tax, or financial advice.
+          </p>
+          <a
+            className="inline-flex items-center gap-2 border-b border-datx-blue/40 pb-1 text-sm font-medium text-datx-accent transition-colors duration-200 hover:border-datx-accent hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-datx-accent"
+            href="https://x.com/DATX_strategy"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            𝕏 Follow DATX on X
+          </a>
+        </div>
       </div>
     </footer>
   );
