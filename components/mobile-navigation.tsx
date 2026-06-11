@@ -7,6 +7,7 @@ import { SampleAssessmentModal } from "@/components/sample-assessment-modal";
 const mobileLinks = [
   { label: "Framework", href: "/#framework" },
   { label: "Reports", href: "/#reports" },
+  { label: "Research", href: "/research" },
   { label: "Network", href: "/#network" },
   { label: "Workflow", href: "/#workflow" },
   { label: "About", href: "/about" },

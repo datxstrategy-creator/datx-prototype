@@ -5,6 +5,7 @@ import { MobileNavigation } from "@/components/mobile-navigation";
 const links = [
   { label: "Framework", href: "/#framework" },
   { label: "Reports", href: "/#reports" },
+  { label: "Research", href: "/research" },
   { label: "Network", href: "/#network" },
   { label: "Workflow", href: "/#workflow" },
   { label: "About", href: "/about" },
