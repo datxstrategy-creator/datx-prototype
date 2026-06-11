@@ -1,4 +1,5 @@
 import { SiteHeader } from "@/components/site-header";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,13 +8,19 @@ export const metadata: Metadata = {
     "Independent research on digital asset treasury strategy, corporate treasury allocation, governance, and public company digital asset adoption.",
 };
 
-const articleThemes = [
-  "Treasury mandate and liquidity profile",
-  "Board oversight and delegated authority",
-  "Capital allocation capacity and constraints",
-  "Custody, controls, reporting, and audit readiness",
-  "Investor narrative and disclosure discipline",
-];
+const featuredArticle = {
+  title: "What Is a Digital Asset Treasury Strategy?",
+  href: "/research/what-is-a-digital-asset-treasury-strategy",
+  description:
+    "A practical framework for boards, CFOs, investors, and public company management teams evaluating digital assets as part of corporate treasury policy.",
+  themes: [
+    "Treasury mandate and liquidity profile",
+    "Board oversight and delegated authority",
+    "Capital allocation capacity and constraints",
+    "Custody, controls, reporting, and audit readiness",
+    "Investor narrative and disclosure discipline",
+  ],
+};
 
 const comingSoonArticles = [
   {
@@ -60,274 +67,115 @@ function FeaturedArticleSection() {
   return (
     <section className="section-space border-b border-datx-line" id="featured">
       <PageShell>
-        <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-14">
+        <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14">
           <div>
             <p className="eyebrow">Featured Article</p>
             <h2 className="mt-5 text-3xl font-light tracking-tight text-white sm:text-4xl">
-              What Is a Digital Asset Treasury Strategy?
+              Institutional research for treasury decision-makers
             </h2>
             <p className="body-copy mt-6">
-              A practical framework for boards, CFOs, investors, and public
-              company management teams evaluating digital assets as part of
-              corporate treasury policy.
+              DATX Research is structured as an article index for public company
+              leaders evaluating digital asset treasury models, governance, and
+              capital allocation questions.
             </p>
+          </div>
+
+          <Link
+            className="surface block p-7 transition-colors duration-200 hover:border-datx-blue sm:p-10 lg:p-12"
+            href={featuredArticle.href}
+          >
+            <p className="eyebrow">Featured Article</p>
+            <h3 className="mt-5 text-3xl font-light leading-tight text-white sm:text-4xl">
+              {featuredArticle.title}
+            </h3>
+            <p className="body-copy mt-6">{featuredArticle.description}</p>
             <div className="mt-8 border-l border-datx-blue bg-datx-navy/60 px-6 py-5">
               <p className="text-sm uppercase tracking-[0.18em] text-datx-accent">
                 Analytical Focus
               </p>
               <ul className="mt-5 space-y-3">
-                {articleThemes.map((theme) => (
-                  <li className="flex gap-3 text-sm leading-6 text-slate-200" key={theme}>
+                {featuredArticle.themes.map((theme) => (
+                  <li
+                    className="flex gap-3 text-sm leading-6 text-slate-200"
+                    key={theme}
+                  >
                     <span className="mt-2 h-px w-4 shrink-0 bg-datx-blue" />
                     {theme}
                   </li>
                 ))}
               </ul>
             </div>
-          </div>
-
-          <article className="surface p-7 sm:p-10 lg:p-12">
-            <div className="border-b border-datx-line pb-8">
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-datx-blue">
-                Original DATX Article
-              </p>
-              <h3 className="mt-4 text-3xl font-light leading-tight text-white sm:text-4xl">
-                What Is a Digital Asset Treasury Strategy?
-              </h3>
-            </div>
-
-            <div className="mt-9 space-y-10">
-              <ArticleSection title="Definition">
-                <p>
-                  A digital asset treasury strategy is a formal corporate
-                  framework for evaluating, acquiring, holding, governing, and
-                  reporting digital assets on a company balance sheet. It is not
-                  simply an asset purchase. It is a treasury policy decision
-                  that should connect capital allocation, liquidity management,
-                  governance, controls, disclosure, custody, accounting, and
-                  investor communication.
-                </p>
-                <p>
-                  For a public company, the strategy must be understood as part
-                  of the broader treasury mandate. It should clarify why digital
-                  assets are being considered, what role they may serve, how
-                  exposure will be limited or expanded, which risks are
-                  acceptable, and how management will remain accountable to the
-                  board and shareholders.
-                </p>
-              </ArticleSection>
-
-              <ArticleSection title="Why Public Companies Are Evaluating Digital Assets">
-                <p>
-                  Public companies are evaluating digital assets because
-                  treasury strategy is no longer limited to cash preservation
-                  alone. Inflation exposure, low real returns on idle capital,
-                  changing investor expectations, and the maturation of digital
-                  asset market infrastructure have widened the capital
-                  allocation discussion.
-                </p>
-                <p>
-                  For some issuers, digital assets may be assessed as strategic
-                  reserve assets. For others, they may support market
-                  positioning, investor engagement, or alignment with technology
-                  and financial innovation themes. The rationale varies by
-                  company, and the strongest cases begin with a clear link
-                  between the treasury decision and the issuer&apos;s financial
-                  profile, operating model, and shareholder base.
-                </p>
-              </ArticleSection>
-
-              <ArticleSection title="Treasury Readiness">
-                <p>
-                  Treasury readiness starts with balance sheet capacity. A
-                  company should understand its working capital needs, cash burn
-                  profile, debt obligations, covenant limitations, liquidity
-                  runway, and access to capital before considering any strategic
-                  reserve allocation.
-                </p>
-                <p>
-                  Readiness also includes operational preparedness. Management
-                  teams need defined custody workflows, transaction approval
-                  processes, valuation methods, reporting cadence, accounting
-                  review, insurance considerations, and continuity planning. A
-                  digital asset treasury strategy that cannot be administered
-                  reliably is not ready for public company execution.
-                </p>
-              </ArticleSection>
-
-              <ArticleSection title="Governance Requirements">
-                <p>
-                  Governance is the central requirement. Boards should establish
-                  the purpose of the strategy, approve risk parameters, define
-                  delegated authority, and determine how frequently management
-                  will report on exposure, performance, controls, and market
-                  developments.
-                </p>
-                <p>
-                  Effective governance should address allocation limits,
-                  eligible assets, custody arrangements, counterparty exposure,
-                  execution procedures, conflicts of interest, disclosure
-                  controls, and escalation triggers. The objective is not to
-                  slow decision-making; it is to make sure decisions can be
-                  defended under scrutiny.
-                </p>
-              </ArticleSection>
-
-              <ArticleSection title="Capital Allocation Considerations">
-                <p>
-                  Capital allocation analysis should compare digital asset
-                  exposure with other possible uses of corporate capital,
-                  including operating investment, debt reduction, dividends,
-                  buybacks, acquisitions, and cash reserves. The question is not
-                  whether digital assets are interesting. The question is
-                  whether they fit the company&apos;s capital priorities and risk
-                  capacity.
-                </p>
-                <p>
-                  A disciplined strategy defines allocation size, funding
-                  source, deployment pace, rebalancing approach, liquidity
-                  buffers, and conditions for review. It also separates
-                  strategic reserve decisions from short-term market timing.
-                  That distinction is important for boards and investors
-                  evaluating the durability of the policy.
-                </p>
-              </ArticleSection>
-
-              <ArticleSection title="Risk Management">
-                <p>
-                  Digital asset treasury risk includes price volatility,
-                  liquidity risk, custody failure, cybersecurity exposure,
-                  counterparty risk, regulatory uncertainty, tax and accounting
-                  complexity, impairment or valuation treatment, and reputation
-                  risk. These risks do not make a strategy impossible, but they
-                  do require explicit treatment.
-                </p>
-                <p>
-                  Risk management should define what can go wrong, who monitors
-                  each risk, what data is reviewed, which thresholds trigger
-                  action, and how the company communicates during periods of
-                  market stress. Public companies should expect investors,
-                  auditors, regulators, and counterparties to examine the
-                  control environment around any material treasury position.
-                </p>
-              </ArticleSection>
-
-              <ArticleSection title="Investor Positioning">
-                <p>
-                  A digital asset treasury strategy can affect how investors
-                  interpret a company. It may broaden relevance with digital
-                  asset and technology-oriented investors, but it may also
-                  create questions about volatility, strategic focus, and
-                  governance discipline.
-                </p>
-                <p>
-                  Investor positioning should therefore be intentional.
-                  Management should be able to explain the treasury objective,
-                  allocation framework, control structure, and relationship to
-                  the operating business. A clear narrative helps the market
-                  understand the strategy as a capital allocation framework
-                  rather than a promotional event.
-                </p>
-              </ArticleSection>
-
-              <ArticleSection title="Why Strategy Must Be Company-Specific">
-                <p>
-                  No single digital asset treasury model applies to every
-                  issuer. A cash-rich operating company, a capital-light
-                  technology business, a resource issuer, a holding company, and
-                  a turnaround situation all face different constraints. Market
-                  capitalization, liquidity, shareholder composition, regulatory
-                  environment, capital access, and management credibility all
-                  matter.
-                </p>
-                <p>
-                  The same allocation that appears manageable for one company
-                  may be inappropriate for another. Strategy must be built from
-                  the company outward: first the mandate, then the balance
-                  sheet, then governance, then sizing, then communication.
-                </p>
-              </ArticleSection>
-
-              <ArticleSection title="DATX Perspective">
-                <p>
-                  DATX views digital asset treasury strategy as an institutional
-                  capital allocation discipline. The most credible strategies
-                  are not driven by hype, asset promotion, or imitation. They
-                  are built through structured analysis of readiness,
-                  governance, financial capacity, strategic rationale, and
-                  investor positioning.
-                </p>
-                <p>
-                  In the DATX framework, the core question is simple: is this
-                  strategy suitable, defensible, and executable for this
-                  specific public company? When that question is answered with
-                  evidence, boards and management teams can evaluate digital
-                  asset treasury policy with the same rigor applied to any major
-                  capital allocation decision.
-                </p>
-              </ArticleSection>
-            </div>
-          </article>
+            <span className="mt-8 inline-flex text-sm font-medium text-datx-accent transition-colors">
+              Read article
+            </span>
+          </Link>
         </div>
       </PageShell>
     </section>
   );
 }
 
-function ArticleSection({
-  children,
-  title,
-}: {
-  children: React.ReactNode;
-  title: string;
-}) {
+function LatestResearchSection() {
   return (
-    <section>
-      <h4 className="text-xl font-light text-white">{title}</h4>
-      <div className="mt-4 space-y-4 text-base leading-8 text-datx-mist">
-        {children}
-      </div>
-    </section>
-  );
-}
-
-function ArticleCardsSection() {
-  return (
-    <section className="section-space" id="articles">
+    <section className="section-space border-b border-datx-line" id="latest">
       <PageShell>
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="eyebrow">Article Cards</p>
+            <p className="eyebrow">Latest Research</p>
             <h2 className="mt-4 text-3xl font-light tracking-tight text-white sm:text-4xl">
-              Research Library
+              Published Analysis
             </h2>
           </div>
           <p className="max-w-xl text-sm leading-7 text-slate-400">
-            DATX Research will expand with company case studies and governance
-            analysis for public market treasury models.
+            Current DATX research articles are published as standalone pages so
+            future research can scale without turning the landing page into a
+            long-form archive.
           </p>
         </div>
 
         <div className="mt-11 grid gap-5 lg:grid-cols-3">
-          <article className="surface border-datx-blue/40 p-7">
+          <Link
+            className="surface block border-datx-blue/40 p-7 transition-colors duration-200 hover:border-datx-blue"
+            href={featuredArticle.href}
+          >
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-datx-blue">
-              Featured
+              Research Article
             </p>
             <h3 className="mt-8 text-xl font-light leading-8 text-white">
-              What Is a Digital Asset Treasury Strategy?
+              {featuredArticle.title}
             </h3>
             <p className="mt-5 text-sm leading-7 text-datx-mist">
               A foundational DATX article on treasury readiness, governance,
               capital allocation, risk management, and investor positioning.
             </p>
-            <a
-              className="mt-8 inline-flex text-sm font-medium text-datx-accent transition-colors hover:text-white"
-              href="#featured"
-            >
+            <span className="mt-8 inline-flex text-sm font-medium text-datx-accent">
               Read article
-            </a>
-          </article>
+            </span>
+          </Link>
+        </div>
+      </PageShell>
+    </section>
+  );
+}
 
+function ComingSoonSection() {
+  return (
+    <section className="section-space" id="coming-soon">
+      <PageShell>
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="eyebrow">Coming Soon</p>
+            <h2 className="mt-4 text-3xl font-light tracking-tight text-white sm:text-4xl">
+              Case Study Pipeline
+            </h2>
+          </div>
+          <p className="max-w-xl text-sm leading-7 text-slate-400">
+            Future articles will be published on dedicated research URLs rather
+            than appended to this index.
+          </p>
+        </div>
+
+        <div className="mt-11 grid gap-5 lg:grid-cols-2">
           {comingSoonArticles.map((article) => (
             <article className="surface p-7" key={article.title}>
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
@@ -390,7 +238,8 @@ export default function ResearchPage() {
       <main>
         <ResearchHero />
         <FeaturedArticleSection />
-        <ArticleCardsSection />
+        <LatestResearchSection />
+        <ComingSoonSection />
       </main>
       <SiteFooter />
     </>
