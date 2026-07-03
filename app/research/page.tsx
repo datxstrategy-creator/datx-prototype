@@ -22,12 +22,22 @@ const featuredArticle = {
   ],
 };
 
-const comingSoonArticles = [
+const publishedArticles = [
+  {
+    title: featuredArticle.title,
+    href: featuredArticle.href,
+    description:
+      "A foundational DATX article on treasury readiness, governance, capital allocation, risk management, and investor positioning.",
+  },
   {
     title: "Metaplanet Case Study: From Operating Company to Bitcoin Treasury Pioneer",
+    href: "/research/metaplanet-case-study-from-operating-company-to-bitcoin-treasury-pioneer",
     description:
-      "A forthcoming review of how a listed operating company repositioned around a digital asset treasury model.",
+      "Lessons for public companies evaluating a digital asset treasury strategy through Metaplanet's treasury transformation.",
   },
+];
+
+const comingSoonArticles = [
   {
     title: "DigitalX Case Study: Australia’s Public Market Bitcoin Treasury Strategy",
     description:
@@ -133,25 +143,27 @@ function LatestResearchSection() {
           </p>
         </div>
 
-        <div className="mt-11 grid gap-5 lg:grid-cols-3">
-          <Link
-            className="surface block border-datx-blue/40 p-7 transition-colors duration-200 hover:border-datx-blue"
-            href={featuredArticle.href}
-          >
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-datx-blue">
-              Research Article
-            </p>
-            <h3 className="mt-8 text-xl font-light leading-8 text-white">
-              {featuredArticle.title}
-            </h3>
-            <p className="mt-5 text-sm leading-7 text-datx-mist">
-              A foundational DATX article on treasury readiness, governance,
-              capital allocation, risk management, and investor positioning.
-            </p>
-            <span className="mt-8 inline-flex text-sm font-medium text-datx-accent">
-              Read article
-            </span>
-          </Link>
+        <div className="mt-11 grid gap-5 lg:grid-cols-2">
+          {publishedArticles.map((article) => (
+            <Link
+              className="surface block border-datx-blue/40 p-7 transition-colors duration-200 hover:border-datx-blue"
+              href={article.href}
+              key={article.title}
+            >
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-datx-blue">
+                Research Article
+              </p>
+              <h3 className="mt-8 text-xl font-light leading-8 text-white">
+                {article.title}
+              </h3>
+              <p className="mt-5 text-sm leading-7 text-datx-mist">
+                {article.description}
+              </p>
+              <span className="mt-8 inline-flex text-sm font-medium text-datx-accent">
+                Read article
+              </span>
+            </Link>
+          ))}
         </div>
       </PageShell>
     </section>
