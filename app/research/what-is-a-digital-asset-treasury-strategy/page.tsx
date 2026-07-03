@@ -1,9 +1,12 @@
 import { SiteHeader } from "@/components/site-header";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { researchArticles } from "../research-articles";
+
+const article = researchArticles.digitalAssetTreasuryStrategy;
 
 export const metadata: Metadata = {
-  title: "What Is a Digital Asset Treasury Strategy? | DATX Research",
+  title: `${article.title} | DATX Research`,
   description:
     "DATX Research explains digital asset treasury strategy, treasury readiness, governance, capital allocation, risk management, and investor positioning.",
 };
@@ -27,7 +30,7 @@ function ArticleHero() {
               DATX Research
             </Link>
             <h1 className="mt-6 text-4xl font-light tracking-tight text-white sm:text-6xl">
-              What Is a Digital Asset Treasury Strategy?
+              {article.title}
             </h1>
             <p className="mt-6 max-w-3xl text-xl font-light leading-9 text-slate-200 sm:text-2xl">
               A practical framework for boards, CFOs, investors, and public
@@ -66,8 +69,11 @@ function ArticleBody() {
           <div className="border-b border-datx-line pb-8">
             <p className="eyebrow">Featured Article</p>
             <h2 className="mt-4 text-3xl font-light leading-tight text-white sm:text-4xl">
-              What Is a Digital Asset Treasury Strategy?
+              {article.title}
             </h2>
+            <p className="mt-4 text-sm font-medium text-slate-500">
+              Published: {article.publicationDate}
+            </p>
           </div>
 
           <div className="mt-10 space-y-11">

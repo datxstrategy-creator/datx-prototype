@@ -1,12 +1,13 @@
 import { SiteHeader } from "@/components/site-header";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { researchArticles } from "../research-articles";
+
+const article = researchArticles.metaplanetCaseStudy;
 
 export const metadata: Metadata = {
-  title:
-    "Metaplanet Case Study: From Operating Company to Bitcoin Treasury Pioneer | DATX Research",
-  description:
-    "Lessons for public companies evaluating a digital asset treasury strategy through Metaplanet's treasury transformation.",
+  title: `${article.title} | DATX Research`,
+  description: article.description,
 };
 
 const assessmentScores = [
@@ -37,8 +38,7 @@ function ArticleHero() {
               DATX Research
             </Link>
             <h1 className="mt-6 text-4xl font-light tracking-tight text-white sm:text-6xl">
-              Metaplanet Case Study: From Operating Company to Bitcoin Treasury
-              Pioneer
+              {article.title}
             </h1>
             <p className="mt-6 max-w-3xl text-xl font-light leading-9 text-slate-200 sm:text-2xl">
               Lessons for Public Companies Evaluating a Digital Asset Treasury
@@ -93,9 +93,11 @@ function ArticleBody() {
           <div className="border-b border-datx-line pb-8">
             <p className="eyebrow">Case Study</p>
             <h2 className="mt-4 text-3xl font-light leading-tight text-white sm:text-4xl">
-              Metaplanet Case Study: From Operating Company to Bitcoin Treasury
-              Pioneer
+              {article.title}
             </h2>
+            <p className="mt-4 text-sm font-medium text-slate-500">
+              Published: {article.publicationDate}
+            </p>
             <p className="mt-5 text-lg leading-8 text-slate-300">
               Lessons for Public Companies Evaluating a Digital Asset Treasury
               Strategy

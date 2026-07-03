@@ -1,6 +1,10 @@
 import { SiteHeader } from "@/components/site-header";
 import Link from "next/link";
 import type { Metadata } from "next";
+import {
+  publishedResearchArticles,
+  researchArticles,
+} from "./research-articles";
 
 export const metadata: Metadata = {
   title: "DATX Research | Digital Asset Treasury Strategy",
@@ -9,10 +13,7 @@ export const metadata: Metadata = {
 };
 
 const featuredArticle = {
-  title: "What Is a Digital Asset Treasury Strategy?",
-  href: "/research/what-is-a-digital-asset-treasury-strategy",
-  description:
-    "A practical framework for boards, CFOs, investors, and public company management teams evaluating digital assets as part of corporate treasury policy.",
+  ...researchArticles.digitalAssetTreasuryStrategy,
   themes: [
     "Treasury mandate and liquidity profile",
     "Board oversight and delegated authority",
@@ -21,21 +22,6 @@ const featuredArticle = {
     "Investor narrative and disclosure discipline",
   ],
 };
-
-const publishedArticles = [
-  {
-    title: featuredArticle.title,
-    href: featuredArticle.href,
-    description:
-      "A foundational DATX article on treasury readiness, governance, capital allocation, risk management, and investor positioning.",
-  },
-  {
-    title: "Metaplanet Case Study: From Operating Company to Bitcoin Treasury Pioneer",
-    href: "/research/metaplanet-case-study-from-operating-company-to-bitcoin-treasury-pioneer",
-    description:
-      "Lessons for public companies evaluating a digital asset treasury strategy through Metaplanet's treasury transformation.",
-  },
-];
 
 const comingSoonArticles = [
   {
@@ -144,7 +130,7 @@ function LatestResearchSection() {
         </div>
 
         <div className="mt-11 grid gap-5 lg:grid-cols-2">
-          {publishedArticles.map((article) => (
+          {publishedResearchArticles.map((article) => (
             <Link
               className="surface block border-datx-blue/40 p-7 transition-colors duration-200 hover:border-datx-blue"
               href={article.href}
@@ -153,7 +139,10 @@ function LatestResearchSection() {
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-datx-blue">
                 Research Article
               </p>
-              <h3 className="mt-8 text-xl font-light leading-8 text-white">
+              <p className="mt-3 text-xs font-medium text-slate-500">
+                {article.publishedMeta}
+              </p>
+              <h3 className="mt-7 text-xl font-light leading-8 text-white">
                 {article.title}
               </h3>
               <p className="mt-5 text-sm leading-7 text-datx-mist">
