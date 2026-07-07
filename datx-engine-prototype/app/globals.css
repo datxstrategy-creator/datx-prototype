@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --background: #05080d;
+  --foreground: #edf3f8;
+}
+
+@theme inline {
+  --color-datx-black: #05080d;
+  --color-datx-navy: #08111d;
+  --color-datx-panel: #0d1825;
+  --color-datx-panel-soft: #111f2e;
+  --color-datx-line: #203246;
+  --color-datx-blue: #5d86ae;
+  --color-datx-accent: #9bb8d2;
+  --color-datx-gold: #c9ad62;
+  --color-datx-mist: #b9c7d5;
+  --font-sans: var(--font-geist-sans);
+}
+
+* {
+  border-color: var(--color-datx-line);
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 6%, rgba(93, 134, 174, 0.16), transparent 31rem),
+    linear-gradient(180deg, #05080d 0%, #09111b 46%, #05080d 100%);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), "Segoe UI", Arial, sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: #294765;
+  color: #f8fbff;
+}
+
+@layer components {
+  .container-frame {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-10;
+  }
+
+  .surface {
+    @apply border border-datx-line bg-datx-panel/82 shadow-[0_24px_70px_rgba(0,0,0,0.32)];
+  }
+
+  .field {
+    @apply h-11 w-full rounded-sm border border-datx-line bg-[#07101a] px-3 text-sm text-slate-100 outline-none transition-colors placeholder:text-slate-500 focus:border-datx-blue;
+  }
+
+  .label {
+    @apply mb-2 block text-xs font-medium uppercase tracking-[0.13em] text-datx-accent;
+  }
+}
