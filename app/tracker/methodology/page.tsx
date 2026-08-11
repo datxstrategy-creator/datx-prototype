@@ -131,6 +131,9 @@ export default function TrackerMethodologyPage() {
 
         <section className="border-t border-datx-line pt-5 text-sm leading-7 text-slate-400">
           <p>{methodology.disclaimer}</p>
+          <p className="mt-3 text-xs text-slate-500">
+            Crypto prices are as of 11 Aug 2026, approximately 03:38 UTC.
+          </p>
         </section>
       </div>
     </main>

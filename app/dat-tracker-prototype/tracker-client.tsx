@@ -70,6 +70,11 @@ export type CompanyRecord = {
   model: string;
   rating: TqsRating | PendingRating;
   dataNote?: string;
+  sources?: {
+    label: string;
+    url: string;
+    date: string;
+  }[];
 };
 
 const assetFilters: AssetFilter[] = [
@@ -229,7 +234,9 @@ function modelPill(company: CompanyRecord) {
 }
 
 function hasVerifiedHolding(company: CompanyRecord) {
-  return !company.holdings.toLowerCase().includes("prototype");
+  const holdings = company.holdings.toLowerCase();
+
+  return !holdings.includes("prototype") && !holdings.includes("pending");
 }
 
 function confidenceStars(confidence: number) {
@@ -500,6 +507,7 @@ function AssetBadge({ company }: { company: CompanyRecord }) {
 
 function HoldingsDisplay({ company }: { company: CompanyRecord }) {
   const verified = hasVerifiedHolding(company);
+  const pending = company.holdings.toLowerCase().includes("pending");
 
   return (
     <div className="text-sm">
@@ -508,6 +516,8 @@ function HoldingsDisplay({ company }: { company: CompanyRecord }) {
       </p>
       {verified ? (
         <p className="mt-1 font-mono text-xs text-slate-500">≈ {company.treasuryNav}</p>
+      ) : pending ? (
+        <p className="mt-1 text-xs text-slate-500">Pending verification</p>
       ) : (
         <p className="mt-1 text-xs text-slate-500">Prototype / pending verification</p>
       )}
@@ -1159,6 +1169,9 @@ function MethodologyModal({
             <p className="mt-3 text-sm leading-7 text-slate-400">
               Numerical treasury data and analyst-scored qualitative categories
               are treated separately so assumptions remain visible.
+              {publicMode
+                ? " Crypto prices are as of 11 Aug 2026, approximately 03:38 UTC."
+                : ""}
             </p>
           </div>
           <div className="border border-datx-line bg-[#091522] p-4">
@@ -1451,7 +1464,12 @@ export function DatTrackerPrototype({
                 {[
                   [summary.companiesTracked, "Public Companies"],
                   [summary.assetsRepresented, "Treasury Assets"],
-                  [summary.aggregateNav, "Aggregate Treasury NAV"],
+                  [
+                    summary.aggregateNav,
+                    publicMode
+                      ? "Approx. Aggregate Treasury NAV"
+                      : "Aggregate Treasury NAV",
+                  ],
                   [summary.ratedCount, "Full TQS Reports"],
                 ].map(([value, label], index) => (
                   <div className="flex items-center gap-3" key={label}>
@@ -1480,7 +1498,9 @@ export function DatTrackerPrototype({
                 Methodology
               </button>
               <div className="border border-datx-line bg-datx-panel/60 px-3 py-2 text-xs text-slate-400">
-                Last updated: 16 Jul 2026 · {publicMode ? "Public data" : "Prototype data"}
+                {publicMode
+                  ? "Data reviewed: 11 Aug 2026 · Public sources"
+                  : "Last updated: 16 Jul 2026 · Prototype data"}
               </div>
             </div>
           </div>

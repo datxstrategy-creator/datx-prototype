@@ -352,6 +352,12 @@ export function CompanyReportContent({
           <p className="mt-8 max-w-5xl border-t border-datx-line pt-5 text-sm leading-7 text-slate-400">
             {report.disclaimer}
           </p>
+          {report.reviewNotice ? (
+            <div className="mt-5 max-w-5xl border border-amber-300/30 bg-amber-400/10 p-4 text-sm leading-7 text-amber-100">
+              <p className="font-semibold text-amber-50">Analyst review notice</p>
+              <p className="mt-2 text-amber-100/85">{report.reviewNotice}</p>
+            </div>
+          ) : null}
         </div>
       </section>
 

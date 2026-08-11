@@ -33,6 +33,7 @@ export type CompanyReport = {
   grade: string;
   confidence: number;
   disclaimer: string;
+  reviewNotice?: string;
   categories: ReportCategory[];
   obsSubcategories: ReportSubcategory[];
   verdict: {
@@ -773,8 +774,8 @@ export const companyReports: Record<string, CompanyReport> = {
     ticker: "3903",
     exchange: "TSE",
     country: "Japan",
-    treasuryModel: "XRP Treasury",
-    primaryAsset: "XRP",
+    treasuryModel: "Multi-Asset Treasury",
+    primaryAsset: "BTC + XRP",
     lastReviewed: "16 July 2026",
     score: 76,
     maxScore: 100,
@@ -782,6 +783,8 @@ export const companyReports: Record<string, CompanyReport> = {
     confidence: 4,
     disclaimer:
       "The DATX Treasury Quality Score™ evaluates the quality, resilience, governance, execution, shareholder alignment, and long-term sustainability of a digital asset treasury strategy. It is not a prediction of share-price performance or investment advice.",
+    reviewNotice:
+      "Holdings data and report analysis are under analyst review. DATX has identified BTC holdings and XRP exposure pending verification, but the current XRP quantity and complete crypto portfolio have not yet been independently verified. The TQS score is retained pending a full reassessment.",
     categories: [
       {
         label: "Treasury Rationale",
