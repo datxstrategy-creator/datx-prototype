@@ -521,7 +521,13 @@ function HoldingsDisplay({ company }: { company: CompanyRecord }) {
       {verified ? (
         <p className="mt-1 font-mono text-xs text-slate-500">≈ {company.treasuryNav}</p>
       ) : pending ? (
-        <p className="mt-1 text-xs text-slate-500">Pending verification</p>
+        <p
+          aria-label="Pending verification"
+          className="mt-1 text-xs font-semibold uppercase tracking-[0.08em] text-slate-500"
+          title="Pending verification"
+        >
+          Pending
+        </p>
       ) : (
         <p className="mt-1 text-xs text-slate-500">Prototype / pending verification</p>
       )}
@@ -537,7 +543,7 @@ function NumericStatusValue({ value }: { value: string }) {
   return (
     <span
       aria-label="Pending verification"
-      className="inline-flex max-w-full items-center justify-center whitespace-nowrap rounded-sm border border-slate-500/35 bg-slate-600/10 px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-300"
+      className="inline-flex max-w-full items-center justify-center whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-500"
       title="Pending verification"
     >
       Pending
@@ -555,11 +561,10 @@ function TqsBadge({
   if (company.rating.status === "pending") {
     return (
       <span
-        className="inline-flex min-w-[86px] flex-col items-center rounded-sm border border-slate-500/35 bg-slate-600/10 px-3 py-2 text-center text-xs font-semibold uppercase tracking-[0.08em] text-slate-300"
+        className="inline-flex items-center justify-center text-center text-xs font-semibold uppercase tracking-[0.08em] text-slate-500 transition hover:text-slate-300"
         title={pendingHelp}
       >
-        <span>TQS</span>
-        <span>Pending</span>
+        TQS Pending
       </span>
     );
   }
@@ -1720,14 +1725,20 @@ export function DatTrackerPrototype({
                       >
                         <NumericStatusValue value={company.mnav} />
                       </td>
-                      <td className="bg-teal-400/[0.03] px-4 py-3 text-right">
+                      <td
+                        className={`bg-teal-400/[0.03] px-4 py-3 ${
+                          rated ? "text-right" : "text-center"
+                        }`}
+                      >
                         <button
                           aria-label={
                             rated
                               ? `Open ${company.name} DATX Treasury Quality Score scorecard`
                               : `Request priority coverage for ${company.name}. ${pendingHelp}`
                           }
-                          className="cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-datx-accent"
+                          className={`cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-datx-accent ${
+                            rated ? "" : "inline-flex w-full justify-center"
+                          }`}
                           onClick={(event) => {
                             event.stopPropagation();
                             if (rated) {
