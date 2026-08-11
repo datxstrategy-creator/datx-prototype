@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
+import { companyReports } from "./dat-tracker-prototype/company-reports";
 
 const baseUrl = "https://datxstrategy.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -28,5 +29,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/tracker`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/tracker/methodology`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ];
+
+  const reportRoutes: MetadataRoute.Sitemap = Object.keys(companyReports).map((slug) => ({
+    url: `${baseUrl}/tracker/companies/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.75,
+  }));
+
+  return [...staticRoutes, ...reportRoutes];
 }

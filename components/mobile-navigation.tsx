@@ -8,6 +8,7 @@ const mobileLinks = [
   { label: "Framework", href: "/#framework" },
   { label: "Reports", href: "/#reports" },
   { label: "Research", href: "/research" },
+  { label: "Tracker", href: "/tracker" },
   { label: "Network", href: "/#network" },
   { label: "Workflow", href: "/#workflow" },
   { label: "About", href: "/about" },
