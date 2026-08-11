@@ -131,6 +131,11 @@ export default function TrackerMethodologyPage() {
 
         <section className="border-t border-datx-line pt-5 text-sm leading-7 text-slate-400">
           <p>{methodology.disclaimer}</p>
+          <p className="mt-3 text-xs leading-6 text-slate-500">
+            Tracker data is reviewed weekly and following material company
+            announcements. Figures are not real-time and may reflect different
+            reporting dates.
+          </p>
           <p className="mt-3 text-xs text-slate-500">
             Crypto prices are as of 11 Aug 2026, approximately 03:38 UTC.
           </p>

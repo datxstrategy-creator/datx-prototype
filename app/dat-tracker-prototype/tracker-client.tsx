@@ -1526,7 +1526,7 @@ export function DatTrackerPrototype({
               </button>
               <div className="border border-datx-line bg-datx-panel/60 px-3 py-2 text-xs text-slate-400">
                 {publicMode
-                  ? "Data reviewed: 11 Aug 2026 · Public sources"
+                  ? "Data reviewed: 11 Aug 2026 · Updated weekly on Tuesdays · Public sources"
                   : "Last updated: 16 Jul 2026 · Prototype data"}
               </div>
             </div>
