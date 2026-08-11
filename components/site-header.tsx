@@ -6,7 +6,6 @@ const links = [
   { label: "Framework", href: "/#framework" },
   { label: "Reports", href: "/#reports" },
   { label: "Research", href: "/research" },
-  { label: "Tracker", href: "/tracker" },
   { label: "Network", href: "/#network" },
   { label: "Workflow", href: "/#workflow" },
   { label: "About", href: "/about" },
@@ -41,10 +40,10 @@ export function SiteHeader() {
           ))}
         </nav>
         <Link
-          className="button-secondary hidden px-5 py-2.5 sm:inline-flex"
-          href="/#assessment"
+          className="button-secondary hidden whitespace-nowrap px-4 py-2.5 text-sm sm:inline-flex xl:px-5"
+          href="/tracker"
         >
-          Request Assessment
+          Digital Asset Co. Tracker
         </Link>
         <MobileNavigation />
       </div>
