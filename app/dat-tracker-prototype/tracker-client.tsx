@@ -247,6 +247,10 @@ function parseMnav(value: string) {
   return Number(value.replace("x", "")) || 0;
 }
 
+function isPendingVerification(value: string) {
+  return value.toLowerCase() === "pending verification";
+}
+
 function compareCompany(a: CompanyRecord, b: CompanyRecord, key: SortKey) {
   switch (key) {
     case "company":
@@ -522,6 +526,22 @@ function HoldingsDisplay({ company }: { company: CompanyRecord }) {
         <p className="mt-1 text-xs text-slate-500">Prototype / pending verification</p>
       )}
     </div>
+  );
+}
+
+function NumericStatusValue({ value }: { value: string }) {
+  if (!isPendingVerification(value)) {
+    return <>{value}</>;
+  }
+
+  return (
+    <span
+      aria-label="Pending verification"
+      className="inline-flex max-w-full items-center justify-center whitespace-nowrap rounded-sm border border-slate-500/35 bg-slate-600/10 px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-300"
+      title="Pending verification"
+    >
+      Pending
+    </span>
   );
 }
 
@@ -962,7 +982,9 @@ function ScorecardModal({
                     <p className="text-xs uppercase tracking-[0.12em] text-slate-500">
                       {label}
                     </p>
-                    <p className="mt-1 text-sm text-slate-100">{value}</p>
+                    <p className="mt-1 text-sm text-slate-100">
+                      <NumericStatusValue value={value} />
+                    </p>
                   </div>
                 ))}
               </div>
@@ -1677,14 +1699,26 @@ export function DatTrackerPrototype({
                       <td className="px-4 py-3">
                         <HoldingsDisplay company={company} />
                       </td>
-                      <td className="px-4 py-3 text-right font-mono text-sm text-slate-100">
-                        {company.treasuryNav}
+                      <td
+                        className={`px-4 py-3 font-mono text-sm text-slate-100 ${
+                          isPendingVerification(company.treasuryNav)
+                            ? "text-center"
+                            : "text-right"
+                        }`}
+                      >
+                        <NumericStatusValue value={company.treasuryNav} />
                       </td>
                       <td className="px-4 py-3 text-right font-mono text-sm text-slate-100">
                         {company.marketCap}
                       </td>
-                      <td className="px-4 py-3 text-right font-mono text-sm text-slate-100">
-                        {company.mnav}
+                      <td
+                        className={`px-4 py-3 font-mono text-sm text-slate-100 ${
+                          isPendingVerification(company.mnav)
+                            ? "text-center"
+                            : "text-right"
+                        }`}
+                      >
+                        <NumericStatusValue value={company.mnav} />
                       </td>
                       <td className="bg-teal-400/[0.03] px-4 py-3 text-right">
                         <button
@@ -1784,14 +1818,16 @@ export function DatTrackerPrototype({
                         Treasury NAV
                       </p>
                       <p className="mt-1 font-mono text-slate-100">
-                        {company.treasuryNav}
+                        <NumericStatusValue value={company.treasuryNav} />
                       </p>
                     </div>
                     <div>
                       <p className="text-xs uppercase tracking-[0.12em] text-slate-500">
                         mNAV
                       </p>
-                      <p className="mt-1 font-mono text-slate-100">{company.mnav}</p>
+                      <p className="mt-1 font-mono text-slate-100">
+                        <NumericStatusValue value={company.mnav} />
+                      </p>
                     </div>
                   </div>
                 </>
