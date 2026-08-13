@@ -287,12 +287,17 @@ export function CompanyReportContent({
     <main className="min-h-screen bg-datx-black text-slate-100">
       <section className="border-b border-datx-line bg-[#050910]">
         <div className="container-frame py-10 sm:py-14">
-          <Link
-            className="button-secondary mb-8"
-            href={basePath}
-          >
-            {publicMode ? "Back to Tracker" : "Back to DAT Tracker"}
-          </Link>
+          {publicMode ? (
+            <nav aria-label="Breadcrumb" className="mb-8 text-sm text-slate-400">
+              <ol className="flex flex-wrap items-center gap-2">
+                <li><Link className="transition hover:text-white" href="/tracker">DATX Tracker</Link></li>
+                <li aria-hidden="true">/</li>
+                <li aria-current="page" className="text-slate-200">{report.companyName} Company Report</li>
+              </ol>
+            </nav>
+          ) : (
+            <Link className="button-secondary mb-8" href={basePath}>Back to DAT Tracker</Link>
+          )}
           <div className="grid gap-6 lg:grid-cols-[1fr_360px] lg:items-start">
             <div>
               <p className="eyebrow">
@@ -445,7 +450,7 @@ export function CompanyReportContent({
                     isOperatingBusiness ? "text-3xl" : "text-2xl"
                   }`}
                 >
-                  {category.score}/{category.max} — {category.assessment}
+                  {category.title} — {category.score}/{category.max}
                 </h2>
                 <div
                   className={`mt-5 grid gap-5 ${
@@ -571,9 +576,16 @@ export function CompanyReportContent({
 
         <section className="border-t border-datx-line pt-6 text-sm leading-7 text-slate-400">
           <p>{report.disclaimer}</p>
-          <Link className="button-primary mt-6" href={basePath}>
-            {publicMode ? "Back to Tracker" : "Back to DAT Tracker"}
-          </Link>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link className="button-primary" href={basePath}>
+              {publicMode ? "Back to Tracker" : "Back to DAT Tracker"}
+            </Link>
+            {publicMode ? (
+              <Link className="button-secondary" href="/tracker/methodology">
+                View TQS Methodology
+              </Link>
+            ) : null}
+          </div>
         </section>
       </div>
     </main>

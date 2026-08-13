@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { companyReports } from "./dat-tracker-prototype/company-reports";
 
-const baseUrl = "https://datxstrategy.com";
+const baseUrl = "https://www.datxstrategy.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [

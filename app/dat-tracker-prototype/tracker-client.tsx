@@ -11,6 +11,7 @@ import {
   type KeyboardEvent,
 } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { createPortal } from "react-dom";
 
@@ -27,6 +28,13 @@ export type ScoreCategory = {
   score: number;
   max: number;
 };
+
+const publishedReports = [
+  { name: "Strategy", slug: "strategy" },
+  { name: "DigitalX", slug: "digitalx" },
+  { name: "Metaplanet", slug: "metaplanet" },
+  { name: "gumi Inc.", slug: "gumi" },
+];
 
 export type OperatingBusinessSubcategory = {
   label: string;
@@ -1531,6 +1539,23 @@ export function DatTrackerPrototype({
               </div>
             </div>
           </div>
+          {publicMode ? (
+            <nav
+              aria-label="Published company reports"
+              className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-datx-line pt-4 text-sm"
+            >
+              <span className="text-slate-500">Published reports:</span>
+              {publishedReports.map((report) => (
+                <Link
+                  className="text-datx-accent transition hover:text-white"
+                  href={`${basePath}/companies/${report.slug}`}
+                  key={report.slug}
+                >
+                  {report.name}
+                </Link>
+              ))}
+            </nav>
+          ) : null}
         </div>
       </section>
 

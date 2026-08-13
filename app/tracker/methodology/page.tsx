@@ -4,7 +4,8 @@ import Link from "next/link";
 const title = "DATX TQS Methodology | Digital Asset Treasury Company Tracker";
 const description =
   "How DATX evaluates digital asset treasury companies using Treasury Quality Score categories, confidence ratings, and operating-business strength subcategories.";
-const url = "https://datxstrategy.com/tracker/methodology";
+const baseUrl = "https://www.datxstrategy.com";
+const url = `${baseUrl}/tracker/methodology`;
 const methodology = {
   categories: [
     { label: "Treasury Rationale", max: 10 },
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://datxstrategy.com/brand/datx-logo-white.png",
+        url: `${baseUrl}/brand/datx-logo-white.png`,
         alt: "DATX",
       },
     ],
@@ -49,18 +50,37 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["https://datxstrategy.com/brand/datx-logo-white.png"],
+    images: [`${baseUrl}/brand/datx-logo-white.png`],
   },
 };
 
 export default function TrackerMethodologyPage() {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "DATX Tracker", item: `${baseUrl}/tracker` },
+      { "@type": "ListItem", position: 2, name: "TQS Methodology", item: url },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-datx-black text-slate-100">
+      <script
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c"),
+        }}
+        type="application/ld+json"
+      />
       <section className="border-b border-datx-line bg-[#050910]">
         <div className="container-frame py-10 sm:py-14">
-          <Link className="button-secondary mb-8" href="/tracker">
-            Back to Tracker
-          </Link>
+          <nav aria-label="Breadcrumb" className="mb-8 text-sm text-slate-400">
+            <ol className="flex flex-wrap items-center gap-2">
+              <li><Link className="transition hover:text-white" href="/tracker">DATX Tracker</Link></li>
+              <li aria-hidden="true">/</li>
+              <li aria-current="page" className="text-slate-200">TQS Methodology</li>
+            </ol>
+          </nav>
           <p className="eyebrow">DATX TQS Methodology</p>
           <h1 className="mt-4 max-w-4xl text-4xl font-light tracking-tight text-white sm:text-5xl">
             Treasury Quality Score™ methodology
