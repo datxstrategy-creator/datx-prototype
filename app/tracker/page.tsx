@@ -9,7 +9,14 @@ import {
 const title = "Digital Asset Treasury Company Tracker™ | DATX";
 const description =
   "Independent research, Treasury Quality Scores (TQS), and market intelligence for public digital asset treasury companies.";
-const url = "https://datxstrategy.com/tracker";
+const baseUrl = "https://www.datxstrategy.com";
+const url = `${baseUrl}/tracker`;
+const publishedReports = [
+  { name: "Strategy", slug: "strategy" },
+  { name: "DigitalX", slug: "digitalx" },
+  { name: "Metaplanet", slug: "metaplanet" },
+  { name: "gumi Inc.", slug: "gumi" },
+];
 
 const tqsFramework = [
   ["Treasury Rationale", 10],
@@ -598,7 +605,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://datxstrategy.com/brand/datx-logo-white.png",
+        url: `${baseUrl}/brand/datx-logo-white.png`,
         alt: "DATX",
       },
     ],
@@ -607,20 +614,46 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["https://datxstrategy.com/brand/datx-logo-white.png"],
+    images: [`${baseUrl}/brand/datx-logo-white.png`],
   },
 };
 
 export default function TrackerPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: title,
+    description,
+    url,
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: publishedReports.length,
+      itemListElement: publishedReports.map((report, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: report.name,
+        url: `${baseUrl}/tracker/companies/${report.slug}`,
+      })),
+    },
+  };
+
   return (
-    <Suspense
-      fallback={
-        <main className="min-h-screen bg-datx-black text-slate-100">
-          <div className="container-frame py-14">Loading DATX tracker...</div>
-        </main>
-      }
-    >
-      <DatTrackerPrototype basePath="/tracker" companies={companies} publicMode />
-    </Suspense>
+    <>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+        type="application/ld+json"
+      />
+      <Suspense
+        fallback={
+          <main className="min-h-screen bg-datx-black text-slate-100">
+            <div className="container-frame py-14">Loading DATX tracker...</div>
+          </main>
+        }
+      >
+        <DatTrackerPrototype basePath="/tracker" companies={companies} publicMode />
+      </Suspense>
+    </>
   );
 }
