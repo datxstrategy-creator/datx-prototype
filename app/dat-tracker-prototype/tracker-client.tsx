@@ -1197,7 +1197,7 @@ function MethodologyModal({
               Numerical treasury data and analyst-scored qualitative categories
               are treated separately so assumptions remain visible.
               {publicMode
-                ? " Crypto prices are as of 11 Aug 2026, approximately 03:38 UTC."
+                ? " Crypto prices are synchronized as of 18 Aug 2026, 05:24 UTC. Equity market caps use the 17 Aug 2026 completed close; international values are converted to USD using 17 Aug reference FX rates. Pending values are excluded from aggregate Treasury NAV."
                 : ""}
             </p>
           </div>
@@ -1205,7 +1205,7 @@ function MethodologyModal({
             <h3 className="text-sm font-semibold text-white">Review frequency</h3>
             <p className="mt-3 text-sm leading-7 text-slate-400">
               {publicMode
-                ? "Public records use a static review date and refresh after material treasury, financing, governance, or disclosure events."
+                ? "Updated weekly on Tuesdays."
                 : "Prototype records use a static review date. Production reviews would refresh after material treasury, financing, governance, or disclosure events."}
             </p>
           </div>
@@ -1526,7 +1526,7 @@ export function DatTrackerPrototype({
               </button>
               <div className="border border-datx-line bg-datx-panel/60 px-3 py-2 text-xs text-slate-400">
                 {publicMode
-                  ? "Data reviewed: 11 Aug 2026 · Updated weekly on Tuesdays · Public sources"
+                  ? "Data reviewed: 18 Aug 2026 · Updated weekly on Tuesdays. · Public sources"
                   : "Last updated: 16 Jul 2026 · Prototype data"}
               </div>
             </div>

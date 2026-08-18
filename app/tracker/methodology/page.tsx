@@ -132,12 +132,17 @@ export default function TrackerMethodologyPage() {
         <section className="border-t border-datx-line pt-5 text-sm leading-7 text-slate-400">
           <p>{methodology.disclaimer}</p>
           <p className="mt-3 text-xs leading-6 text-slate-500">
-            Tracker data is reviewed weekly and following material company
-            announcements. Figures are not real-time and may reflect different
-            reporting dates.
+            Updated weekly on Tuesdays.
           </p>
           <p className="mt-3 text-xs text-slate-500">
-            Crypto prices are as of 11 Aug 2026, approximately 03:38 UTC.
+            Crypto prices use one synchronized snapshot from 18 Aug 2026 at
+            05:24 UTC. Equity market caps use the latest completed common
+            reference close, 17 Aug 2026, with international values converted
+            to USD using 17 Aug reference FX rates. Treasury NAV is direct
+            verified corporate crypto holdings multiplied by those prices;
+            unsupported quantities remain Pending verification and are excluded
+            from the aggregate. mNAV is market capitalization divided by
+            Treasury NAV.
           </p>
         </section>
       </div>
