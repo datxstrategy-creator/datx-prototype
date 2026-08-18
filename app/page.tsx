@@ -8,6 +8,7 @@ import {
   WorkflowSection,
 } from "@/components/datx-content";
 import { SampleAssessmentModal } from "@/components/sample-assessment-modal";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 function HeroSection() {
@@ -76,42 +77,6 @@ function AssessmentSection() {
         </div>
       </div>
     </section>
-  );
-}
-
-function SiteFooter() {
-  return (
-    <footer className="border-t border-datx-line">
-      <div className="container-frame flex flex-col gap-9 py-10 lg:flex-row lg:items-start lg:justify-between">
-        <div>
-          <p className="text-lg font-semibold tracking-[0.25em] text-white">
-            DATX
-          </p>
-          <p className="mt-4 text-sm text-datx-mist">
-            © 2026 DATX. All rights reserved.
-          </p>
-          <p className="mt-4 text-sm text-datx-mist">
-            Built for public company treasury analysis.
-          </p>
-        </div>
-        <div className="flex max-w-2xl flex-col items-start gap-5 lg:items-end lg:text-right">
-          <p className="text-sm leading-7 text-slate-400">
-            DATX provides treasury strategy analysis and institutional-style
-            research only. Nothing on this website constitutes investment,
-            legal, tax, or financial advice.
-          </p>
-          <a
-            aria-label="DATX on X"
-            className="inline-flex h-10 w-10 items-center justify-center text-3xl leading-none text-slate-300 transition-colors duration-200 hover:text-datx-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-datx-accent"
-            href="https://x.com/DATX_strategy"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            𝕏
-          </a>
-        </div>
-      </div>
-    </footer>
   );
 }
 
