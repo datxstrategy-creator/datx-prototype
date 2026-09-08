@@ -1,8 +1,7 @@
 import {
   CapabilitySection,
   PhilosophySection,
-  ReportsSection,
-  ScoringSection,
+  PreAdoptionAssessmentSection,
   StrategicNetworkSection,
   VisionSection,
   WorkflowSection,
@@ -95,9 +94,8 @@ export default function Home() {
         <CapabilitySection />
         <StrategicNetworkSection />
         <VisionSection />
-        <ScoringSection />
+        <PreAdoptionAssessmentSection />
         <PhilosophySection />
-        <ReportsSection />
         <WorkflowSection />
         <AssessmentSection />
       </main>
