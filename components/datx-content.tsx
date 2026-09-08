@@ -69,7 +69,7 @@ const phases = [
     name: "Initial DATX Assessment",
     items: [
       "Treasury suitability screening",
-      "Preliminary DATX score",
+      "Preliminary treasury suitability assessment",
       "Strategic observations",
     ],
   },
