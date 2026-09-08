@@ -9,6 +9,7 @@ import {
 } from "@/components/datx-content";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { TreasuryQualitySection } from "@/components/treasury-quality-section";
 
 function HeroSection() {
   return (
@@ -90,6 +91,7 @@ export default function Home() {
       <SiteHeader />
       <main>
         <HeroSection />
+        <TreasuryQualitySection />
         <CapabilitySection />
         <StrategicNetworkSection />
         <VisionSection />
