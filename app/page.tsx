@@ -7,7 +7,6 @@ import {
   VisionSection,
   WorkflowSection,
 } from "@/components/datx-content";
-import { SampleAssessmentModal } from "@/components/sample-assessment-modal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
@@ -33,7 +32,12 @@ function HeroSection() {
             <a className="button-primary" href="#assessment">
               Request Treasury Assessment
             </a>
-            <SampleAssessmentModal className="button-secondary gap-2" />
+            <a
+              className="button-secondary gap-2"
+              href="https://www.datxstrategy.com/tracker/companies/strategy"
+            >
+              View Full TQS Report
+            </a>
           </div>
         </div>
       </div>
