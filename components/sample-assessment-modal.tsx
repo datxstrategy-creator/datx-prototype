@@ -637,7 +637,7 @@ const samplePreviewHtml = `
       </div>
 
       <div class="cta-row">
-        <a class="button-primary" href="mailto:datx.strategy@gmail.com?subject=Request%20DATX%20Treasury%20Assessment">Request DATX Treasury Assessment</a>
+        <a class="button-primary" href="mailto:chrisnakayama@datxstrategy.com">Request DATX Treasury Assessment</a>
       </div>
 
       <footer class="disclaimer">

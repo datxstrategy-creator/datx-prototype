@@ -199,12 +199,12 @@ function ContactSection() {
         <div className="mt-8 border border-datx-line bg-datx-navy/70 p-4 sm:flex sm:items-center sm:justify-between sm:gap-4">
           <a
             className="block break-all text-left text-sm leading-6 text-datx-accent transition-colors hover:text-white"
-            href="mailto:datx.strategy@gmail.com"
+            href="mailto:chrisnakayama@datxstrategy.com"
           >
-            datx.strategy@gmail.com
+            chrisnakayama@datxstrategy.com
           </a>
           <div className="mt-4 sm:mt-0">
-            <CopyEmailButton email="datx.strategy@gmail.com" />
+            <CopyEmailButton email="chrisnakayama@datxstrategy.com" />
           </div>
         </div>
       </div>

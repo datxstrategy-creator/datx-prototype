@@ -63,7 +63,7 @@ function AssessmentSection() {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a
                 className="button-primary"
-                href="mailto:datx.strategy@gmail.com?subject=DATX%20Treasury%20Assessment"
+                href="mailto:chrisnakayama@datxstrategy.com"
               >
                 Request Treasury Assessment
               </a>
@@ -72,9 +72,9 @@ function AssessmentSection() {
               Direct contact:{" "}
               <a
                 className="text-datx-accent transition-colors hover:text-white"
-                href="mailto:datx.strategy@gmail.com"
+                href="mailto:chrisnakayama@datxstrategy.com"
               >
-                datx.strategy@gmail.com
+                chrisnakayama@datxstrategy.com
               </a>
             </p>
           </div>
