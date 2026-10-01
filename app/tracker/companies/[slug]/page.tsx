@@ -92,7 +92,7 @@ export default async function CompanyReportPage({
       description,
       url,
       mainEntityOfPage: url,
-      dateModified: "2026-07-16",
+      dateModified: "2026-09-30",
       author: { "@type": "Organization", name: "DATX", url: baseUrl },
       publisher: {
         "@type": "Organization",

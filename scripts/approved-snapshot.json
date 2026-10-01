@@ -1,0 +1,163 @@
+{
+  "prices": {
+    "BTC": 83715,
+    "ETH": 2690.14,
+    "SOL": 118.23,
+    "XRP": 1.49
+  },
+  "aggregate": 96093209271,
+  "rows": [
+    {
+      "slug": "strategy",
+      "holdings": "847,666 BTC",
+      "nav": 70962359190,
+      "navDisplay": "$70.96B",
+      "cap": 53969430060,
+      "capDisplay": "$53.97B",
+      "mnav": "0.76x",
+      "inputs": {
+        "BTC": 847666
+      }
+    },
+    {
+      "slug": "digitalx",
+      "holdings": "284 BTC + 20,423 SOL",
+      "nav": 26189671,
+      "navDisplay": "$26.2M",
+      "cap": 34830000,
+      "capDisplay": "\u2248 $34.83M",
+      "mnav": "1.33x",
+      "inputs": {
+        "BTC": 284,
+        "SOL": 20423
+      }
+    },
+    {
+      "slug": "metaplanet",
+      "holdings": "43,000 BTC",
+      "nav": 3599745000,
+      "navDisplay": "$3.60B",
+      "cap": 2050000000,
+      "capDisplay": "\u2248 $2.05B",
+      "mnav": "0.57x",
+      "inputs": {
+        "BTC": 43000
+      }
+    },
+    {
+      "slug": "gumi",
+      "holdings": "Pending verification",
+      "nav": 0,
+      "navDisplay": "Pending verification",
+      "cap": 92100000,
+      "capDisplay": "\u2248 $92.1M",
+      "mnav": "Pending verification",
+      "inputs": {}
+    },
+    {
+      "slug": "bitmine-immersion",
+      "holdings": "6,001,302 ETH + 213 BTC",
+      "nav": 16162173857,
+      "navDisplay": "$16.16B",
+      "cap": 14583774178,
+      "capDisplay": "$14.58B",
+      "mnav": "0.90x",
+      "inputs": {
+        "ETH": 6001302,
+        "BTC": 213
+      }
+    },
+    {
+      "slug": "sharplink-gaming",
+      "holdings": "892,127 ETH",
+      "nav": 2399946528,
+      "navDisplay": "$2.40B",
+      "cap": 1946796754,
+      "capDisplay": "$1.95B",
+      "mnav": "0.81x",
+      "inputs": {
+        "ETH": 892127
+      }
+    },
+    {
+      "slug": "sol-strategies",
+      "holdings": "460,017 SOL",
+      "nav": 54387810,
+      "navDisplay": "$54.4M",
+      "cap": 66200000,
+      "capDisplay": "\u2248 $66.2M",
+      "mnav": "1.22x",
+      "inputs": {
+        "SOL": 460017
+      }
+    },
+    {
+      "slug": "defi-development",
+      "holdings": "2,490,304 SOL",
+      "nav": 294428642,
+      "navDisplay": "$294.4M",
+      "cap": 146874870,
+      "capDisplay": "$146.9M",
+      "mnav": "0.50x",
+      "inputs": {
+        "SOL": 2490304
+      }
+    },
+    {
+      "slug": "bitcoin-group",
+      "holdings": "Pending verification",
+      "nav": 0,
+      "navDisplay": "Pending verification",
+      "cap": 150000000,
+      "capDisplay": "\u2248 $150M",
+      "mnav": "Pending verification",
+      "inputs": {}
+    },
+    {
+      "slug": "strive",
+      "holdings": "27,462 BTC",
+      "nav": 2298981330,
+      "navDisplay": "$2.30B",
+      "cap": 2213861454,
+      "capDisplay": "$2.21B",
+      "mnav": "0.96x",
+      "inputs": {
+        "BTC": 27462
+      }
+    },
+    {
+      "slug": "u-turn",
+      "holdings": "Approximately 2.34 million SOL",
+      "nav": 276658200,
+      "navDisplay": "\u2248 $276.7M",
+      "cap": 74677794,
+      "capDisplay": "$74.7M",
+      "mnav": "\u2248 0.27x",
+      "inputs": {
+        "SOL": 2340000
+      }
+    },
+    {
+      "slug": "worksport",
+      "holdings": "Pending verification",
+      "nav": 0,
+      "navDisplay": "Pending verification",
+      "cap": 7075479,
+      "capDisplay": "$7.1M",
+      "mnav": "Pending verification",
+      "inputs": {}
+    },
+    {
+      "slug": "hyperscale-data",
+      "holdings": "219.0652 BTC",
+      "nav": 18339043,
+      "navDisplay": "$18.3M",
+      "cap": 78173032,
+      "capDisplay": "$78.2M",
+      "mnav": "4.26x",
+      "inputs": {
+        "BTC": 219.0652
+      }
+    }
+  ]
+}

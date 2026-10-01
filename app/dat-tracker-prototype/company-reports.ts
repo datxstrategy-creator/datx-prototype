@@ -48,6 +48,7 @@ export type CompanyReport = {
 export const companyReports: Record<string, CompanyReport> = {
   strategy: {
     slug: "strategy",
+    reviewNotice: "Data reviewed: 30 Sep 2026. 847,666 BTC; Treasury NAV $70.96B; market cap $53.97B; mNAV 0.76x. Approved human-audited snapshot; the existing TQS assessment is retained.",
     companyName: "Strategy",
     ticker: "MSTR",
     exchange: "NASDAQ",
@@ -187,7 +188,7 @@ export const companyReports: Record<string, CompanyReport> = {
         assessment: "Outstanding",
         paragraphs: [
           "Strategy has executed at a scale no other public digital asset treasury company has matched.",
-          "It has accumulated 842,138 BTC while simultaneously creating new financing instruments and expanding its investor base.",
+          "It has accumulated 847,666 BTC while simultaneously creating new financing instruments and expanding its investor base.",
           "The company has not merely announced a strategy. It has built an entire capital-market model around it.",
           "The only point withheld reflects the fact that Strategy has not yet operated at its present scale through a prolonged crypto winter combined with severely restricted financing markets.",
           "Managing a treasury of more than 800,000 BTC is fundamentally different from managing one of 100,000 BTC.",
@@ -300,6 +301,7 @@ export const companyReports: Record<string, CompanyReport> = {
   },
   digitalx: {
     slug: "digitalx",
+    reviewNotice: "Data reviewed: 30 Sep 2026. 284 BTC + 20,423 SOL; Treasury NAV $26.2M; market cap approximately $34.83M; mNAV 1.33x. Approved human-audited snapshot; the existing TQS assessment is retained.",
     companyName: "DigitalX",
     ticker: "DCC",
     exchange: "ASX",
@@ -532,6 +534,7 @@ export const companyReports: Record<string, CompanyReport> = {
   },
   metaplanet: {
     slug: "metaplanet",
+    reviewNotice: "Data reviewed: 30 Sep 2026. 43,000 BTC; Treasury NAV $3.60B; market cap approximately $2.05B; mNAV 0.57x. Approved human-audited snapshot; the existing TQS assessment is retained.",
     companyName: "Metaplanet",
     ticker: "3350",
     exchange: "TSE",
@@ -784,7 +787,7 @@ export const companyReports: Record<string, CompanyReport> = {
     disclaimer:
       "The DATX Treasury Quality Score™ evaluates the quality, resilience, governance, execution, shareholder alignment, and long-term sustainability of a digital asset treasury strategy. It is not a prediction of share-price performance or investment advice.",
     reviewNotice:
-      "Holdings data and report analysis are under analyst review. DATX has identified BTC holdings and XRP exposure pending verification, but the current XRP quantity and complete crypto portfolio have not yet been independently verified. The TQS score is retained pending a full reassessment.",
+      "Data reviewed: 30 Sep 2026. Corporate BTC/XRP holdings, Treasury NAV and mNAV remain pending verification and are excluded from the aggregate. The shareholder BTC/XRP benefit program is not corporate treasury holdings. Market cap is approximately $92.1M. The existing TQS score is retained pending a full reassessment.",
     categories: [
       {
         label: "Treasury Rationale",

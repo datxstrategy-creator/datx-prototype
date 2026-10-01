@@ -70,6 +70,7 @@ export type CompanyRecord = {
   asset: AssetFilter;
   assetLabel: string;
   holdings: string;
+  holdingInputs?: Partial<Record<"BTC" | "ETH" | "SOL" | "XRP", number>>;
   treasuryNav: string;
   treasuryNavValue: number;
   marketCap: string;
@@ -252,7 +253,7 @@ function confidenceStars(confidence: number) {
 }
 
 function parseMnav(value: string) {
-  return Number(value.replace("x", "")) || 0;
+  return Number(value.replace(/[^0-9.]/g, "")) || 0;
 }
 
 function isPendingVerification(value: string) {
@@ -486,13 +487,16 @@ function ModelPill({ company }: { company: CompanyRecord }) {
 }
 
 function multiAssetTooltip(company: CompanyRecord) {
+  if (!hasVerifiedHolding(company)) {
+    return "Multi-Asset Treasury — corporate holdings pending verification; excluded from aggregate Treasury NAV.";
+  }
   const allocation = company.assetLabel
     .split("/")
     .map((item) => item.trim())
     .filter((item) => item && item !== "Multi-Asset");
   const holdingsText =
     allocation.length > 0
-      ? `Holdings include ${allocation.join(", ")} and additional digital assets.`
+      ? `Holdings include ${allocation.join(", ")}.`
       : "Holdings include BTC and additional digital assets.";
 
   return `Multi-Asset Treasury\n\n${holdingsText} See the company report for the full allocation.`;
@@ -527,7 +531,7 @@ function HoldingsDisplay({ company }: { company: CompanyRecord }) {
         {company.holdings}
       </p>
       {verified ? (
-        <p className="mt-1 font-mono text-xs text-slate-500">≈ {company.treasuryNav}</p>
+        <p className="mt-1 font-mono text-xs text-slate-500">{company.treasuryNav.startsWith("≈") ? company.treasuryNav : `≈ ${company.treasuryNav}`}</p>
       ) : pending ? (
         <p
           aria-label="Pending verification"
@@ -1205,7 +1209,7 @@ function MethodologyModal({
               Numerical treasury data and analyst-scored qualitative categories
               are treated separately so assumptions remain visible.
               {publicMode
-                ? " Crypto prices are synchronized as of 18 Aug 2026, 05:24 UTC. Equity market caps use the 17 Aug 2026 completed close; international values are converted to USD using 17 Aug reference FX rates. Pending values are excluded from aggregate Treasury NAV."
+                ? " Data reviewed: 30 Sep 2026. Approved snapshot: BTC $83,715; ETH $2,690.14; SOL $118.23; XRP $1.49. Market caps and holdings follow the human-audited manifest. gumi, Bitcoin Group and Worksport are pending verification and excluded from aggregate Treasury NAV. Upexi uses approximately 2,340,000 SOL. Approved NAVs are retained at whole-dollar precision; mNAV is market cap divided by Treasury NAV."
                 : ""}
             </p>
           </div>
@@ -1424,11 +1428,11 @@ export function DatTrackerPrototype({
 
   const summary = useMemo(() => {
     const ratedCount = companies.filter((item) => item.rating.status === "rated").length;
-    const nav = companies.reduce((sum, item) => sum + item.treasuryNavValue, 0);
+    const nav = companies.reduce((sum, item) => sum + (hasVerifiedHolding(item) ? item.treasuryNavValue : 0), 0);
 
     return {
       companiesTracked: companies.length,
-      assetsRepresented: new Set(companies.map((item) => item.asset)).size,
+      assetsRepresented: new Set(companies.flatMap((item) => item.assetLabel.split(" / "))).size,
       aggregateNav: `$${nav.toFixed(1)}B`,
       ratedCount,
     };
@@ -1534,7 +1538,7 @@ export function DatTrackerPrototype({
               </button>
               <div className="border border-datx-line bg-datx-panel/60 px-3 py-2 text-xs text-slate-400">
                 {publicMode
-                  ? "Data reviewed: 18 Aug 2026 · Updated weekly on Tuesdays. · Public sources"
+                  ? "Data reviewed: 30 Sep 2026 · Updated weekly on Tuesdays · Approved snapshot"
                   : "Last updated: 16 Jul 2026 · Prototype data"}
               </div>
             </div>

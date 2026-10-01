@@ -155,14 +155,18 @@ export default function TrackerMethodologyPage() {
             Updated weekly on Tuesdays.
           </p>
           <p className="mt-3 text-xs text-slate-500">
-            Crypto prices use one synchronized snapshot from 18 Aug 2026 at
-            05:24 UTC. Equity market caps use the latest completed common
-            reference close, 17 Aug 2026, with international values converted
-            to USD using 17 Aug reference FX rates. Treasury NAV is direct
-            verified corporate crypto holdings multiplied by those prices;
-            unsupported quantities remain Pending verification and are excluded
-            from the aggregate. mNAV is market capitalization divided by
-            Treasury NAV.
+            Data reviewed: 30 Sep 2026. The approved human-audited snapshot uses
+            BTC $83,715, ETH $2,690.14, SOL $118.23 and XRP $1.49. Holdings,
+            USD market capitalizations and verification states follow that manifest.
+            Treasury NAV is corporate crypto holdings multiplied by snapshot prices;
+            approved whole-dollar NAVs are retained. mNAV is market capitalization
+            divided by Treasury NAV, rounded to two decimals. Upexi uses an approximate
+            holding of 2,340,000 SOL, with approximate NAV and mNAV. gumi, Bitcoin Group
+            and Worksport remain pending verification and are excluded from the
+            $96,093,209,271 aggregate ($96.1B). The gumi shareholder BTC/XRP benefit
+            program is not corporate treasury holdings. Historical source links are
+            references and do not represent a new source review. Existing TQS scores
+            are retained; a market-data update is not a new TQS assessment.
           </p>
         </section>
       </div>
