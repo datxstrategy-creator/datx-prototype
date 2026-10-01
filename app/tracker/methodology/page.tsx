@@ -151,9 +151,6 @@ export default function TrackerMethodologyPage() {
 
         <section className="border-t border-datx-line pt-5 text-sm leading-7 text-slate-400">
           <p>{methodology.disclaimer}</p>
-          <p className="mt-3 text-xs leading-6 text-slate-500">
-            Updated weekly on Tuesdays.
-          </p>
           <p className="mt-3 text-xs text-slate-500">
             Data reviewed: 30 Sep 2026. The approved human-audited snapshot uses
             BTC $83,715, ETH $2,690.14, SOL $118.23 and XRP $1.49. Holdings,

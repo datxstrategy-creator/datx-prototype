@@ -1213,14 +1213,6 @@ function MethodologyModal({
                 : ""}
             </p>
           </div>
-          <div className="border border-datx-line bg-[#091522] p-4">
-            <h3 className="text-sm font-semibold text-white">Review frequency</h3>
-            <p className="mt-3 text-sm leading-7 text-slate-400">
-              {publicMode
-                ? "Updated weekly on Tuesdays."
-                : "Prototype records use a static review date. Production reviews would refresh after material treasury, financing, governance, or disclosure events."}
-            </p>
-          </div>
         </section>
 
         <section className="border-t border-datx-line pt-5 text-sm leading-7 text-slate-400">
@@ -1538,7 +1530,7 @@ export function DatTrackerPrototype({
               </button>
               <div className="border border-datx-line bg-datx-panel/60 px-3 py-2 text-xs text-slate-400">
                 {publicMode
-                  ? "Data reviewed: 30 Sep 2026 · Updated weekly on Tuesdays · Approved snapshot"
+                  ? "Last updated: 30 Sep 2026"
                   : "Last updated: 16 Jul 2026 · Prototype data"}
               </div>
             </div>
