@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { SiteFooter } from "@/components/site-footer";
 import {
   DatTrackerPrototype,
   type CompanyRecord,
@@ -657,6 +658,7 @@ export default function TrackerPage() {
           </div>
         </div>
       </section>
+      <SiteFooter />
     </>
   );
 }
