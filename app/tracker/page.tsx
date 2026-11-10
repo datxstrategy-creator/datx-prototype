@@ -596,6 +596,27 @@ export default function TrackerPage() {
     },
   };
 
+  const tetherComparison = (
+    <section id="tether" className="container-frame py-4" aria-labelledby="tether-heading">
+      <div className="border border-datx-line bg-datx-panel/60 p-5">
+        <p className="text-xs uppercase tracking-wider text-slate-400">Private company comparison</p>
+        <h2 id="tether-heading" className="mt-2 text-lg text-white">Tether</h2>
+        <p className="mt-2 font-mono text-datx-accent">≈ 150,000 BTC</p>
+        <p className="mt-2 text-sm leading-6 text-slate-300">
+          CEO-reported estimate disclosed on 3 November 2026, covering USDT reserves
+          and separate corporate holdings. The 30 September BDO attestation lists
+          $8.37 billion in reserve BTC, implying approximately 100,060 BTC. That
+          reserve figure is part of the broader estimate and is shown separately for
+          context. Tether is excluded from the public-company aggregate and TQS.
+        </p>
+        <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm text-datx-accent">
+          <a href="https://www.coindesk.com/business/2026/11/03/tether-holds-150-000-bitcoin-worth-usd11-5-billion-ceo-paolo-ardoino-says">CEO disclosure coverage</a>
+          <a href="https://tether.io/news/tether-generates-1-5-billion-in-q3-net-operating-profit-as-reserve-buffer-doubles-to-almost-8-billion/">Q3 reserve attestation</a>
+        </div>
+      </div>
+    </section>
+  );
+
   return (
     <>
       <script
@@ -611,26 +632,13 @@ export default function TrackerPage() {
           </main>
         }
       >
-        <DatTrackerPrototype basePath="/tracker" companies={companies} publicMode />
+        <DatTrackerPrototype
+          basePath="/tracker"
+          companies={companies}
+          comparison={tetherComparison}
+          publicMode
+        />
       </Suspense>
-      <section id="tether" className="container-frame py-4" aria-labelledby="tether-heading">
-        <div className="border border-datx-line bg-datx-panel/60 p-5">
-          <p className="text-xs uppercase tracking-wider text-slate-400">Private company comparison</p>
-          <h2 id="tether-heading" className="mt-2 text-lg text-white">Tether</h2>
-          <p className="mt-2 font-mono text-datx-accent">≈ 150,000 BTC</p>
-          <p className="mt-2 text-sm leading-6 text-slate-300">
-            CEO-reported estimate disclosed on 3 November 2026, covering USDT reserves
-            and separate corporate holdings. The 30 September BDO attestation lists
-            $8.37 billion in reserve BTC, implying approximately 100,060 BTC. That
-            reserve figure is part of the broader estimate and is shown separately for
-            context. Tether is excluded from the public-company aggregate and TQS.
-          </p>
-          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm text-datx-accent">
-            <a href="https://www.coindesk.com/business/2026/11/03/tether-holds-150-000-bitcoin-worth-usd11-5-billion-ceo-paolo-ardoino-says">CEO disclosure coverage</a>
-            <a href="https://tether.io/news/tether-generates-1-5-billion-in-q3-net-operating-profit-as-reserve-buffer-doubles-to-almost-8-billion/">Q3 reserve attestation</a>
-          </div>
-        </div>
-      </section>
       <section id="holdings-sources" className="container-frame pb-8" aria-labelledby="holdings-sources-heading">
         <details className="border border-datx-line bg-datx-panel/60 p-5">
           <summary id="holdings-sources-heading" className="cursor-pointer text-sm font-semibold text-white">

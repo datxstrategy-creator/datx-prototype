@@ -9,6 +9,7 @@ import {
   useId,
   type KeyboardEvent as ReactKeyboardEvent,
   type KeyboardEvent,
+  type ReactNode,
 } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -1303,10 +1304,12 @@ export function DatTrackerPrototype({
   companies,
   basePath = defaultTrackerBasePath,
   publicMode = false,
+  comparison,
 }: {
   companies: CompanyRecord[];
   basePath?: string;
   publicMode?: boolean;
+  comparison?: ReactNode;
 }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -1316,7 +1319,10 @@ export function DatTrackerPrototype({
   const [country, setCountry] = useState(allCountries);
   const [grade, setGrade] = useState(allGrades);
   const [model, setModel] = useState(allModels);
-  const [sort, setSort] = useState<SortState>({ key: "tqs", direction: "desc" });
+  const [sort, setSort] = useState<SortState>({
+    key: publicMode ? "mnav" : "tqs",
+    direction: "desc",
+  });
   const [methodologyOpen, setMethodologyOpen] = useState(false);
   const [priorityCoverageCompany, setPriorityCoverageCompany] =
     useState<CompanyRecord | null>(null);
@@ -1572,6 +1578,8 @@ export function DatTrackerPrototype({
           ) : null}
         </div>
       </section>
+
+      {comparison}
 
       <section className="container-frame py-1.5 sm:py-2">
         <div className="border border-datx-line bg-[#07111d] shadow-panel">
