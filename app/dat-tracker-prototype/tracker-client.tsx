@@ -70,11 +70,13 @@ export type CompanyRecord = {
   asset: AssetFilter;
   assetLabel: string;
   holdings: string;
+  holdingsAsOf?: string;
   holdingInputs?: Partial<Record<"BTC" | "ETH" | "SOL" | "XRP", number>>;
   treasuryNav: string;
   treasuryNavValue: number;
   marketCap: string;
   marketCapValue: number;
+  marketCapSource?: string;
   mnav: string;
   model: string;
   rating: TqsRating | PendingRating;
@@ -526,10 +528,13 @@ function HoldingsDisplay({ company }: { company: CompanyRecord }) {
   const pending = company.holdings.toLowerCase().includes("pending");
 
   return (
-    <div className="text-sm">
+    <div className="text-sm" title={company.dataNote}>
       <p className={verified ? "font-medium text-slate-100" : "text-slate-300"}>
         {company.holdings}
       </p>
+      {company.holdingsAsOf && (
+        <p className="mt-1 text-xs text-slate-400">{verified ? "As of" : "Disclosure period ended"} {company.holdingsAsOf}</p>
+      )}
       {verified ? (
         <p className="mt-1 font-mono text-xs text-slate-500">{company.treasuryNav.startsWith("≈") ? company.treasuryNav : `≈ ${company.treasuryNav}`}</p>
       ) : pending ? (
@@ -992,7 +997,7 @@ function ScorecardModal({
                 {[
                   ["Holdings", company.holdings],
                   ["Treasury NAV", company.treasuryNav],
-                  ["Market Cap", company.marketCap],
+                  [publicMode ? "Market Cap (9 Nov)" : "Market Cap", company.marketCap],
                   ["mNAV", company.mnav],
                 ].map(([label, value]) => (
                   <div key={label} className="border-t border-datx-line pt-3">
@@ -1209,7 +1214,7 @@ function MethodologyModal({
               Numerical treasury data and analyst-scored qualitative categories
               are treated separately so assumptions remain visible.
               {publicMode
-                ? " Data reviewed: 30 Sep 2026. Approved snapshot: BTC $83,715; ETH $2,690.14; SOL $118.23; XRP $1.49. Market caps and holdings follow the human-audited manifest. gumi, Bitcoin Group and Worksport are pending verification and excluded from aggregate Treasury NAV. Upexi uses approximately 2,340,000 SOL. Approved NAVs are retained at whole-dollar precision; mNAV is market cap divided by Treasury NAV."
+                ? " Holdings reviewed 10 Nov 2026 and valued at 9 Nov 2026 USD snapshot prices. Market caps are dated 9 Nov 2026. Basic mNAV divides USD equity market cap by covered crypto value using the latest disclosed holdings. See the public methodology and holdings sources for coverage details."
                 : ""}
             </p>
           </div>
@@ -1311,7 +1316,10 @@ export function DatTrackerPrototype({
   const [country, setCountry] = useState(allCountries);
   const [grade, setGrade] = useState(allGrades);
   const [model, setModel] = useState(allModels);
-  const [sort, setSort] = useState<SortState>({ key: "tqs", direction: "desc" });
+  const [sort, setSort] = useState<SortState>({
+    key: publicMode ? "treasuryNav" : "tqs",
+    direction: "desc",
+  });
   const [methodologyOpen, setMethodologyOpen] = useState(false);
   const [priorityCoverageCompany, setPriorityCoverageCompany] =
     useState<CompanyRecord | null>(null);
@@ -1380,6 +1388,14 @@ export function DatTrackerPrototype({
   const filteredCompanies = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
 
+    const tickers: Partial<Record<AssetFilter, string>> = {
+      Bitcoin: "BTC",
+      Ethereum: "ETH",
+      Solana: "SOL",
+      XRP: "XRP",
+    };
+    const assetTicker = tickers[asset];
+
     return companies
       .filter((company) => {
         const matchesSearch =
@@ -1396,7 +1412,10 @@ export function DatTrackerPrototype({
             .join(" ")
             .toLowerCase()
             .includes(normalizedQuery);
-        const matchesAsset = asset === "All Assets" || company.asset === asset;
+        const matchesAsset =
+          asset === "All Assets" ||
+          company.asset === asset ||
+          (publicMode && assetTicker !== undefined && company.assetLabel.split(" / ").includes(assetTicker));
         const matchesCountry = country === allCountries || company.country === country;
         const matchesGrade =
           grade === allGrades ||
@@ -1416,7 +1435,7 @@ export function DatTrackerPrototype({
         const direction = sort.direction === "asc" ? 1 : -1;
         return compareCompany(a, b, sort.key) * direction;
       });
-  }, [asset, companies, country, grade, model, query, sort]);
+  }, [asset, companies, country, grade, model, publicMode, query, sort]);
 
   const summary = useMemo(() => {
     const ratedCount = companies.filter((item) => item.rating.status === "rated").length;
@@ -1530,7 +1549,7 @@ export function DatTrackerPrototype({
               </button>
               <div className="border border-datx-line bg-datx-panel/60 px-3 py-2 text-xs text-slate-400">
                 {publicMode
-                  ? "Last updated: 30 Sep 2026"
+                  ? "Holdings reviewed: 10 Nov 2026"
                   : "Last updated: 16 Jul 2026 · Prototype data"}
               </div>
             </div>
@@ -1540,7 +1559,9 @@ export function DatTrackerPrototype({
               aria-label="Published company reports"
               className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-datx-line pt-4 text-sm"
             >
-              <span className="text-slate-500">Published reports:</span>
+              <a className="text-datx-accent transition hover:text-white" href="#tether">Tether BTC comparison</a>
+              <a className="text-datx-accent transition hover:text-white" href="#holdings-sources">Holdings sources</a>
+              <span className="text-slate-500">Published reports</span>
               {publishedReports.map((report) => (
                 <Link
                   className="text-datx-accent transition hover:text-white"
@@ -1648,7 +1669,7 @@ export function DatTrackerPrototype({
                     ["Treasury Asset", "asset", "left"],
                     ["Holdings", "holdings", "left"],
                     ["Treasury NAV", "treasuryNav", "right"],
-                    ["Market Cap", "marketCap", "right"],
+                    [publicMode ? "Market Cap (9 Nov)" : "Market Cap", "marketCap", "right"],
                     ["mNAV", "mnav", "right"],
                     ["DATX TQS", "tqs", "right"],
                   ].map(([label, key, align]) => (

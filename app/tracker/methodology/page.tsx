@@ -152,18 +152,19 @@ export default function TrackerMethodologyPage() {
         <section className="border-t border-datx-line pt-5 text-sm leading-7 text-slate-400">
           <p>{methodology.disclaimer}</p>
           <p className="mt-3 text-xs text-slate-500">
-            Data reviewed: 30 Sep 2026. The approved human-audited snapshot uses
-            BTC $83,715, ETH $2,690.14, SOL $118.23 and XRP $1.49. Holdings,
-            USD market capitalizations and verification states follow that manifest.
-            Treasury NAV is corporate crypto holdings multiplied by snapshot prices;
-            approved whole-dollar NAVs are retained. mNAV is market capitalization
-            divided by Treasury NAV, rounded to two decimals. Upexi uses an approximate
-            holding of 2,340,000 SOL, with approximate NAV and mNAV. gumi, Bitcoin Group
-            and Worksport remain pending verification and are excluded from the
-            $96,093,209,271 aggregate ($96.1B). The gumi shareholder BTC/XRP benefit
-            program is not corporate treasury holdings. Historical source links are
-            references and do not represent a new source review. Existing TQS scores
-            are retained; a market-data update is not a new TQS assessment.
+            Holdings reviewed on 10 November 2026. Treasury NAV values the covered
+            assets at the 9 November CoinMarketCap snapshot in US dollars
+            (BTC $75,223.15, ETH $2,131.50, SOL $86.55 and XRP $1.0969).
+            Holdings dates vary by issuer. The aggregate includes reported equivalents
+            where disclosed for DigitalX and DeFi Development. Bitcoin Group and
+            Worksport are excluded pending verification of token quantities. Tether
+            appears separately as a private-company comparison. Market caps are
+            dated 9 November, with local currencies converted at ECB reference
+            rates. Basic mNAV divides USD equity market cap by the value of covered
+            crypto holdings and excludes debt, cash and other assets. mNAV is
+            unavailable when token quantities are pending.
+            Company reports retain their original TQS assessment dates. Holdings
+            updates do not constitute a new TQS assessment.
           </p>
         </section>
       </div>
