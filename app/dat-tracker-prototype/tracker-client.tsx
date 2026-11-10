@@ -553,6 +553,15 @@ function HoldingsDisplay({ company }: { company: CompanyRecord }) {
 }
 
 function NumericStatusValue({ value }: { value: string }) {
+  if (value === "Unavailable") {
+    return (
+      <span title="Unavailable">
+        <span aria-hidden="true">-</span>
+        <span className="sr-only">Unavailable</span>
+      </span>
+    );
+  }
+
   if (!isPendingVerification(value)) {
     return <>{value}</>;
   }
@@ -1556,21 +1565,28 @@ export function DatTrackerPrototype({
           </div>
           {publicMode ? (
             <nav
-              aria-label="Published company reports"
+              aria-label="Tracker resources"
               className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-datx-line pt-4 text-sm"
             >
               <a className="text-datx-accent transition hover:text-white" href="#tether">Tether BTC comparison</a>
               <a className="text-datx-accent transition hover:text-white" href="#holdings-sources">Holdings sources</a>
-              <span className="text-slate-500">Published reports</span>
-              {publishedReports.map((report) => (
-                <Link
-                  className="text-datx-accent transition hover:text-white"
-                  href={`${basePath}/companies/${report.slug}`}
-                  key={report.slug}
-                >
-                  {report.name}
-                </Link>
-              ))}
+              <details>
+                <summary className="cursor-pointer text-datx-accent transition hover:text-white">
+                  Published reports
+                </summary>
+                <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-2">
+                  {publishedReports.map((report) => (
+                    <li key={report.slug}>
+                      <Link
+                        className="text-datx-accent transition hover:text-white"
+                        href={`${basePath}/companies/${report.slug}`}
+                      >
+                        {report.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </details>
             </nav>
           ) : null}
         </div>
