@@ -1,163 +1,312 @@
 {
+  "date": "10 Nov 2026",
+  "priceDate": "9 Nov 2026",
   "prices": {
-    "BTC": 83715,
-    "ETH": 2690.14,
-    "SOL": 118.23,
-    "XRP": 1.49
+    "BTC": 75223.15,
+    "ETH": 2131.5,
+    "SOL": 86.55,
+    "XRP": 1.0969
   },
-  "aggregate": 96093209271,
   "rows": [
     {
       "slug": "strategy",
-      "holdings": "847,666 BTC",
-      "nav": 70962359190,
-      "navDisplay": "$70.96B",
-      "cap": 53969430060,
-      "capDisplay": "$53.97B",
-      "mnav": "0.76x",
+      "holdings": "850,364 BTC",
+      "holdingsAsOf": "8 Nov 2026",
+      "nav": 63967058727,
+      "navDisplay": "$63.97B",
+      "cap": 53060000000,
+      "capDisplay": "$53.06B",
+      "mnav": "0.83x",
       "inputs": {
-        "BTC": 847666
-      }
+        "BTC": 850364
+      },
+      "source": {
+        "label": "Strategy Form 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526452693/mstr-20261109.htm",
+        "date": "9 Nov 2026"
+      },
+      "capLocal": 53060000000,
+      "capCurrency": "USD",
+      "capSource": "https://stockanalysis.com/stocks/mstr/market-cap/"
     },
     {
       "slug": "digitalx",
-      "holdings": "284 BTC + 20,423 SOL",
-      "nav": 26189671,
-      "navDisplay": "$26.2M",
-      "cap": 34830000,
-      "capDisplay": "\u2248 $34.83M",
-      "mnav": "1.33x",
+      "holdings": "≈ 221.8 BTC including fund exposure",
+      "holdingsAsOf": "30 Sep 2026",
+      "nav": 16684495,
+      "navDisplay": "≈ $16.7M",
+      "cap": 24528636,
+      "capDisplay": "≈ $24.53M",
+      "mnav": "1.47x",
       "inputs": {
-        "BTC": 284,
-        "SOL": 20423
-      }
+        "BTC": 221.8
+      },
+      "source": {
+        "label": "DigitalX September quarterly report",
+        "url": "https://financialfilings.com/filings/digitalx-limited/interim-quarterly-report/2026/74893960/",
+        "date": "29 Oct 2026"
+      },
+      "capLocal": 35580000,
+      "capCurrency": "AUD",
+      "capSource": "https://stockanalysis.com/quote/asx/DCC/market-cap/"
     },
     {
       "slug": "metaplanet",
-      "holdings": "43,000 BTC",
-      "nav": 3599745000,
-      "navDisplay": "$3.60B",
-      "cap": 2050000000,
-      "capDisplay": "\u2248 $2.05B",
+      "holdings": "44,000 BTC",
+      "holdingsAsOf": "30 Sep 2026",
+      "nav": 3309818600,
+      "navDisplay": "$3.31B",
+      "cap": 1902284507,
+      "capDisplay": "≈ $1.90B",
       "mnav": "0.57x",
       "inputs": {
-        "BTC": 43000
-      }
+        "BTC": 44000
+      },
+      "source": {
+        "label": "Metaplanet Bitcoin Strategy Tracker",
+        "url": "https://analytics.metaplanet.jp/?tab=shares",
+        "date": "5 Oct 2026"
+      },
+      "capLocal": 300460000000,
+      "capCurrency": "JPY",
+      "capSource": "https://stockanalysis.com/quote/tyo/3350/market-cap/"
     },
     {
       "slug": "gumi",
-      "holdings": "Pending verification",
-      "nav": 0,
-      "navDisplay": "Pending verification",
-      "cap": 92100000,
-      "capDisplay": "\u2248 $92.1M",
-      "mnav": "Pending verification",
-      "inputs": {}
+      "holdings": "112 BTC + 1,979,448 XRP",
+      "holdingsAsOf": "31 Jul 2026",
+      "nav": 10596249,
+      "navDisplay": "$10.6M",
+      "cap": 51536297,
+      "capDisplay": "≈ $51.54M",
+      "mnav": "4.86x",
+      "inputs": {
+        "BTC": 112,
+        "XRP": 1979448
+      },
+      "source": {
+        "label": "gumi consolidated results and crypto holdings table",
+        "url": "https://financialfilings.com/filings/gumi-inc/earnings-release/2026/59758349/",
+        "date": "11 Sep 2026"
+      },
+      "capLocal": 8140000000,
+      "capCurrency": "JPY",
+      "capSource": "https://stockanalysis.com/quote/tyo/3903/market-cap/"
     },
     {
       "slug": "bitmine-immersion",
-      "holdings": "6,001,302 ETH + 213 BTC",
-      "nav": 16162173857,
-      "navDisplay": "$16.16B",
-      "cap": 14583774178,
-      "capDisplay": "$14.58B",
-      "mnav": "0.90x",
+      "holdings": "6,070,092 ETH + 216 BTC",
+      "holdingsAsOf": "8 Nov 2026",
+      "nav": 12954649298,
+      "navDisplay": "$12.95B",
+      "cap": 11210000000,
+      "capDisplay": "$11.21B",
+      "mnav": "0.87x",
       "inputs": {
-        "ETH": 6001302,
-        "BTC": 213
-      }
+        "ETH": 6070092,
+        "BTC": 216
+      },
+      "source": {
+        "label": "Bitmine treasury update",
+        "url": "https://www.prnewswire.com/apac/news-releases/bitmine-immersion-technologies-bmnr-announces-eth-holdings-reach-6-07-million-tokens-and-total-crypto-and-total-cash--marketable-securities-holdings-of-14-3-billion-302932985.html",
+        "date": "9 Nov 2026"
+      },
+      "capLocal": 11210000000,
+      "capCurrency": "USD",
+      "capSource": "https://stockanalysis.com/stocks/bmnr/market-cap/"
     },
     {
       "slug": "sharplink-gaming",
-      "holdings": "892,127 ETH",
-      "nav": 2399946528,
-      "navDisplay": "$2.40B",
-      "cap": 1946796754,
-      "capDisplay": "$1.95B",
-      "mnav": "0.81x",
+      "holdings": "≈ 895,117 ETH",
+      "holdingsAsOf": "2 Nov 2026",
+      "nav": 1907941886,
+      "navDisplay": "≈ $1.91B",
+      "cap": 1330000000,
+      "capDisplay": "$1.33B",
+      "mnav": "0.70x",
       "inputs": {
-        "ETH": 892127
-      }
+        "ETH": 895117
+      },
+      "source": {
+        "label": "Sharplink third-quarter results",
+        "url": "https://www.globenewswire.com/de/news-release/2026/11/09/3398374/0/en/sharplink-reports-third-quarter-2026-financial-and-operating-results.html",
+        "date": "9 Nov 2026"
+      },
+      "capLocal": 1330000000,
+      "capCurrency": "USD",
+      "capSource": "https://stockanalysis.com/stocks/sbet/market-cap/"
     },
     {
       "slug": "sol-strategies",
-      "holdings": "460,017 SOL",
-      "nav": 54387810,
-      "navDisplay": "$54.4M",
-      "cap": 66200000,
-      "capDisplay": "\u2248 $66.2M",
-      "mnav": "1.22x",
+      "holdings": "≈ 460,000 SOL",
+      "holdingsAsOf": "30 Jun 2026",
+      "nav": 39813000,
+      "navDisplay": "≈ $39.8M",
+      "cap": 46020000,
+      "capDisplay": "$46.02M",
+      "mnav": "1.16x",
       "inputs": {
-        "SOL": 460017
-      }
+        "SOL": 460000
+      },
+      "source": {
+        "label": "SOL Strategies fiscal third-quarter results",
+        "url": "https://cms.solstrategies.io/sol-strategies-reports-fiscal-q3-2026-results/",
+        "date": "17 Aug 2026"
+      },
+      "capLocal": 46020000,
+      "capCurrency": "USD",
+      "capSource": "https://stockanalysis.com/stocks/stke/market-cap/"
     },
     {
       "slug": "defi-development",
-      "holdings": "2,490,304 SOL",
-      "nav": 294428642,
-      "navDisplay": "$294.4M",
-      "cap": 146874870,
-      "capDisplay": "$146.9M",
+      "holdings": "≈ 2,609,829 SOL and equivalents",
+      "holdingsAsOf": "6 Nov 2026",
+      "nav": 225880700,
+      "navDisplay": "≈ $225.9M",
+      "cap": 112220000,
+      "capDisplay": "$112.22M",
       "mnav": "0.50x",
       "inputs": {
-        "SOL": 2490304
-      }
+        "SOL": 2609829
+      },
+      "source": {
+        "label": "DeFi Development Form 8-K exhibit",
+        "url": "https://www.sec.gov/Archives/edgar/data/1805526/000180552626000158/dfdv-exx991_11926.htm",
+        "date": "9 Nov 2026"
+      },
+      "capLocal": 112220000,
+      "capCurrency": "USD",
+      "capSource": "https://stockanalysis.com/stocks/dfdv/market-cap/"
     },
     {
       "slug": "bitcoin-group",
       "holdings": "Pending verification",
+      "holdingsAsOf": "30 Jun 2026",
       "nav": 0,
       "navDisplay": "Pending verification",
-      "cap": 150000000,
-      "capDisplay": "\u2248 $150M",
-      "mnav": "Pending verification",
-      "inputs": {}
+      "cap": 131405820,
+      "capDisplay": "≈ $131.41M",
+      "mnav": "Unavailable",
+      "inputs": {},
+      "source": {
+        "label": "Bitcoin Group SE half-year report",
+        "url": "https://bitcoingroup.com/en/publications/financial-reports/",
+        "date": "29 Sep 2026"
+      },
+      "capLocal": 117400000,
+      "capCurrency": "EUR",
+      "capSource": "https://stockanalysis.com/quote/etr/ADE/market-cap/"
     },
     {
       "slug": "strive",
-      "holdings": "27,462 BTC",
-      "nav": 2298981330,
-      "navDisplay": "$2.30B",
-      "cap": 2213861454,
-      "capDisplay": "$2.21B",
-      "mnav": "0.96x",
+      "holdings": "43,153 BTC",
+      "holdingsAsOf": "6 Nov 2026",
+      "nav": 3246104592,
+      "navDisplay": "$3.25B",
+      "cap": 2730000000,
+      "capDisplay": "$2.73B",
+      "mnav": "0.84x",
       "inputs": {
-        "BTC": 27462
-      }
+        "BTC": 43153
+      },
+      "source": {
+        "label": "Strive Form 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1920406/000162828026071888/asst-20261109.htm",
+        "date": "9 Nov 2026"
+      },
+      "capLocal": 2730000000,
+      "capCurrency": "USD",
+      "capSource": "https://stockanalysis.com/stocks/asst/market-cap/"
     },
     {
       "slug": "u-turn",
-      "holdings": "Approximately 2.34 million SOL",
-      "nav": 276658200,
-      "navDisplay": "\u2248 $276.7M",
-      "cap": 74677794,
-      "capDisplay": "$74.7M",
-      "mnav": "\u2248 0.27x",
+      "holdings": "2,340,150 SOL",
+      "holdingsAsOf": "30 Jun 2026",
+      "nav": 202539983,
+      "navDisplay": "$202.5M",
+      "cap": 55060000,
+      "capDisplay": "$55.06M",
+      "mnav": "0.27x",
       "inputs": {
-        "SOL": 2340000
-      }
+        "SOL": 2340150
+      },
+      "source": {
+        "label": "Upexi Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1775194/000147793226005668/upxi_10k.htm",
+        "date": "17 Sep 2026"
+      },
+      "capLocal": 55060000,
+      "capCurrency": "USD",
+      "capSource": "https://stockanalysis.com/stocks/upxi/market-cap/"
     },
     {
       "slug": "worksport",
       "holdings": "Pending verification",
+      "holdingsAsOf": null,
       "nav": 0,
       "navDisplay": "Pending verification",
-      "cap": 7075479,
-      "capDisplay": "$7.1M",
-      "mnav": "Pending verification",
-      "inputs": {}
+      "cap": 4650000,
+      "capDisplay": "$4.65M",
+      "mnav": "Unavailable",
+      "inputs": {},
+      "source": {
+        "label": "Worksport Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1096275/000143774926026997/wksp20260630_10q.htm",
+        "date": "11 Aug 2026"
+      },
+      "capLocal": 4650000,
+      "capCurrency": "USD",
+      "capSource": "https://stockanalysis.com/stocks/wksp/market-cap/"
     },
     {
       "slug": "hyperscale-data",
-      "holdings": "219.0652 BTC",
-      "nav": 18339043,
-      "navDisplay": "$18.3M",
-      "cap": 78173032,
-      "capDisplay": "$78.2M",
-      "mnav": "4.26x",
+      "holdings": "211.4639 BTC",
+      "holdingsAsOf": "1 Nov 2026",
+      "nav": 15906981,
+      "navDisplay": "$15.9M",
+      "cap": 32310000,
+      "capDisplay": "$32.31M",
+      "mnav": "2.03x",
       "inputs": {
-        "BTC": 219.0652
-      }
+        "BTC": 211.4639
+      },
+      "source": {
+        "label": "Hyperscale Data treasury release",
+        "url": "https://www.prnewswire.com/news-releases/hyperscale-data-held-approximately-50-6-million-of-bitcoin-cash-and-restricted-cash-as-of-november-1--2026--302927361.html",
+        "date": "3 Nov 2026"
+      },
+      "capLocal": 32310000,
+      "capCurrency": "USD",
+      "capSource": "https://stockanalysis.com/stocks/gpus/market-cap/"
+    },
+    {
+      "slug": "evernorth",
+      "holdings": "≈ 473,000,000 XRP",
+      "holdingsAsOf": "9 Oct 2026",
+      "nav": 518833700,
+      "navDisplay": "≈ $518.8M",
+      "cap": 567380000,
+      "capDisplay": "$567.38M",
+      "mnav": "1.09x",
+      "inputs": {
+        "XRP": 473000000
+      },
+      "source": {
+        "label": "Evernorth prospectus filed with the SEC",
+        "url": "https://www.sec.gov/Archives/edgar/data/2092592/000162828026068609/xrpn-20261030.htm",
+        "date": "30 Oct 2026"
+      },
+      "capLocal": 567380000,
+      "capCurrency": "USD",
+      "capSource": "https://stockanalysis.com/stocks/xrpn/market-cap/"
     }
-  ]
+  ],
+  "aggregate": 86415828211,
+  "marketCapDate": "9 Nov 2026",
+  "fxPerEuro": {
+    "USD": 1.1193,
+    "JPY": 176.79,
+    "AUD": 1.6236,
+    "EUR": 1
+  }
 }
