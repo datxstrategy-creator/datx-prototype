@@ -40,7 +40,7 @@ test('USD market caps reconcile to source amounts and ECB rates', () => {
 });
 test('pending holdings excluded, aggregate $86,415,828,211 and four assets', () => {
  assert.deepEqual(companies.filter(c=>c.holdings==='Pending verification').map(c=>c.slug), ['bitcoin-group','worksport']);
- assert.ok(companies.filter(c=>c.holdings==='Pending verification').every(c=>c.treasuryNavValue===0&&c.mnav==='Unavailable'));
+ assert.ok(companies.filter(c=>c.holdings==='Pending verification').every(c=>c.treasuryNavValue===0&&c.mnav==='-'));
  assert.equal(companies.reduce((sum,c)=>sum+Math.round(c.treasuryNavValue*1e9),0),manifest.aggregate);
  assert.equal((manifest.aggregate/1e9).toFixed(1),'86.4');
  assert.deepEqual([...new Set(companies.flatMap(c=>c.assetLabel.split(' / ')))].sort(), ['BTC','ETH','SOL','XRP']);

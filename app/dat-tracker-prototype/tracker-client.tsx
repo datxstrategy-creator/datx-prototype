@@ -553,12 +553,9 @@ function HoldingsDisplay({ company }: { company: CompanyRecord }) {
 }
 
 function NumericStatusValue({ value }: { value: string }) {
-  if (value === "Unavailable") {
+  if (value.trim().toLowerCase() === "unavailable" || value === "-") {
     return (
-      <span title="Unavailable">
-        <span aria-hidden="true">-</span>
-        <span className="sr-only">Unavailable</span>
-      </span>
+      <span aria-label="Unavailable" title="Unavailable">-</span>
     );
   }
 
