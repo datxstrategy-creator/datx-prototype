@@ -7,7 +7,7 @@ import {
   type ScoreCategory,
 } from "../dat-tracker-prototype/tracker-client";
 
-const title = "Digital Asset Treasury Company Tracker™ | DATX";
+const title = "Digital Asset Treasury Company Tracker | DATX";
 const description =
   "Independent research, Treasury Quality Scores (TQS), and market intelligence for public digital asset treasury companies.";
 const baseUrl = "https://www.datxstrategy.com";

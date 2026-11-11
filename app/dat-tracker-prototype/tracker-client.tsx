@@ -1510,7 +1510,7 @@ export function DatTrackerPrototype({
                 width={343}
               />
               <h1 className="mt-4 text-3xl font-light tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
-                Digital Asset Treasury Company Tracker™
+                Digital Asset Treasury Company Tracker
               </h1>
               <p className="mt-2 max-w-3xl text-sm leading-6 text-datx-mist sm:text-base">
                 Independent research, Treasury Quality Scores (TQS), and market
