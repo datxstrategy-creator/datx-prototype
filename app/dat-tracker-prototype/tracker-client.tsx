@@ -1565,7 +1565,6 @@ export function DatTrackerPrototype({
               aria-label="Tracker resources"
               className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-datx-line pt-4 text-sm"
             >
-              <a className="text-datx-accent transition hover:text-white" href="#tether">Tether BTC comparison</a>
               <a className="text-datx-accent transition hover:text-white" href="#holdings-sources">Holdings sources</a>
               <details>
                 <summary className="cursor-pointer text-datx-accent transition hover:text-white">
@@ -1584,6 +1583,7 @@ export function DatTrackerPrototype({
                   ))}
                 </ul>
               </details>
+              <a className="text-datx-accent transition hover:text-white" href="#tether">Tether BTC comparison</a>
             </nav>
           ) : null}
         </div>
