@@ -186,7 +186,7 @@
       "navDisplay": "Pending verification",
       "cap": 131405820,
       "capDisplay": "≈ $131.41M",
-      "mnav": "Unavailable",
+      "mnav": "-",
       "inputs": {},
       "source": {
         "label": "Bitcoin Group SE half-year report",
@@ -247,7 +247,7 @@
       "navDisplay": "Pending verification",
       "cap": 4650000,
       "capDisplay": "$4.65M",
-      "mnav": "Unavailable",
+      "mnav": "-",
       "inputs": {},
       "source": {
         "label": "Worksport Form 10-Q",
